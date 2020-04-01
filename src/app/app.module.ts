@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './Components/shared/header/header.component';
-import { MenuComponent } from './Components/shared/menu/menu.component';
-import { ContentComponent } from './Components/shared/content/content.component';
-import { FooterComponent } from './Components/shared/footer/footer.component';
-import { SettingComponent } from './Components/shared/setting/setting.component';
+import { HeaderComponent } from './Components/header/header.component';
+import { MenuComponent } from './Components/menu/menu.component';
+import { ContentComponent } from './Components/content/content.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { SettingComponent } from './Components/setting/setting.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { SettingComponent } from './Components/shared/setting/setting.component'
     MenuComponent,
     ContentComponent,
     FooterComponent,
-    SettingComponent
+    SettingComponent,
+    UsersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
