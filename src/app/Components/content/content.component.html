@@ -6,10 +6,20 @@
       Usuarios:
       <div>
 
-        {{Usuarios.data.results[0].username}} 
 
+
+
+          <li *ngFor="let usuario of Usuarios">
+            {{ usuario.username}} 
+            
+                 <!--   {{Usuarios.data.results[0].username}} 
+        {{Usuarios.data.results[1].username}}     
+        {{Usuarios.data.results[2].username}} 
         
+       -->
 
+        </li>
+          
 
 
       </div>

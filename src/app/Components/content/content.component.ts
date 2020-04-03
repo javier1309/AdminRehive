@@ -22,11 +22,11 @@ Usuarios:any=[];
     this.Usuarios=[];
 
 
-   this.Users.getUsers().subscribe((datos: {}) =>{
+   this.Users.getUsers().subscribe((datos) =>{
 
     console.log(datos);
 
-    this.Usuarios=datos;
+    this.Usuarios=datos.data.results;
   });
 
 }

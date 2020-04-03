@@ -40,7 +40,25 @@ export class UsersService {
 
   } 
 
-  //ngOnInit(){this.getUsers();} // esta funcion hace arrancar el metodo get sin necesidad de llamarlo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ // ngOnInit(){
+
+  //  this.getUsers();
+  
+ // } // esta funcion hace arrancar el metodo get sin necesidad de llamarlo 
 
  
 }
