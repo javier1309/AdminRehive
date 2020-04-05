@@ -5,30 +5,18 @@
       <h1>
       Usuarios:
       <div>
-
-
-
-
-          <li *ngFor="let usuario of Usuarios">
-            {{ usuario.username}} 
-            
-                 <!--   {{Usuarios.data.results[0].username}} 
-        {{Usuarios.data.results[1].username}}     
-        {{Usuarios.data.results[2].username}} 
-        
-       -->
-
-        </li>
-          
-
-
+        <table>
+        <tr *ngFor="let usuario of Usuarios" >
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.username | uppercase}}</td>
+            <td>{{usuario.first_name}}</td>
+            <td>{{usuario.last_name}}</td>
+        </tr>
+        </table>
       </div>
 
-
-
-
-        <small>se mostro lista de usuarios</small>
       </h1>
+        <small>se mostro lista de usuarios</small>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> cambiar vista</a></li>
         <li class="active">Here</li>
