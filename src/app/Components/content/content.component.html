@@ -2,38 +2,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-      Usuarios:
-      <div>
-        <table class="table table-hover table-fixed">
-          <!--Table head-->
-          <thead>
-              <tr>
-                  <th>#</th>
-                  <th>Email</th>
-                  <th>Username</th>
-                  <th>Name</th>
-                  <th>Last_Name</th>
-              </tr>
-          </thead>
-          <!--Table head-->
-          <!--Table body-->
-          <tbody>
-            <tr *ngFor="let usuario of Usuarios" >
-                <td>{{usuario.email}}</td>
-                <td>{{usuario.username | uppercase}}</td>
-                <td>{{usuario.first_name}}</td>
-                <td>{{usuario.last_name}}</td>
-            </tr>
-          </tbody>
-          <!--Table body-->
-        </table>
-      </div>
 
-      </h1>
-        <small>se mostro lista de usuarios</small>
+        <small></small>
       <ol cla ss="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> cambiar vista</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="active">Here</li>
       </ol>
     </section>
@@ -44,6 +16,38 @@
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
+
+
+        <h1> USUARIOS: </h1>
+        <h4>
+        <div>
+          <table class="table table-hover table-fixed">
+            <!--Table head-->
+            <thead>
+                <tr>              
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Last_Name</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <!--Table head-->
+            <!--Table body-->
+            <tbody>
+              <tr *ngFor="let usuario of Usuarios" >
+                  <td>{{usuario.email}}</td>
+                  <td>{{usuario.username | uppercase}}</td>
+                  <td>{{usuario.first_name}}</td>
+                  <td>{{usuario.last_name}}</td>
+                  <td>{{usuario.balance}}</td>
+              </tr>
+            </tbody>
+            <!--Table body-->
+          </table>
+        </div>
+  
+      </h4>
 
     </section>
     <!-- /.content -->
