@@ -12,7 +12,7 @@ Usuarios:any=[];
   constructor(  public Users: UsersService) {   }
 
    ngOnInit() {
-    this.getUsuarios();
+    this.getUsuarios(); // cargado de la funcion lista para ser llamada
 
   }
   

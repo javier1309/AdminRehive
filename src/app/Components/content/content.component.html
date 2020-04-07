@@ -5,19 +5,34 @@
       <h1>
       Usuarios:
       <div>
-        <table>
-        <tr *ngFor="let usuario of Usuarios" >
-            <td>{{usuario.email}}</td>
-            <td>{{usuario.username | uppercase}}</td>
-            <td>{{usuario.first_name}}</td>
-            <td>{{usuario.last_name}}</td>
-        </tr>
+        <table class="table table-hover table-fixed">
+          <!--Table head-->
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Email</th>
+                  <th>Username</th>
+                  <th>Name</th>
+                  <th>Last_Name</th>
+              </tr>
+          </thead>
+          <!--Table head-->
+          <!--Table body-->
+          <tbody>
+            <tr *ngFor="let usuario of Usuarios" >
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.username | uppercase}}</td>
+                <td>{{usuario.first_name}}</td>
+                <td>{{usuario.last_name}}</td>
+            </tr>
+          </tbody>
+          <!--Table body-->
         </table>
       </div>
 
       </h1>
         <small>se mostro lista de usuarios</small>
-      <ol class="breadcrumb">
+      <ol cla ss="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> cambiar vista</a></li>
         <li class="active">Here</li>
       </ol>
