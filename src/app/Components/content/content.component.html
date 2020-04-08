@@ -17,7 +17,6 @@
         | Your Page Content Here |
         -------------------------->
 
-
         <h1> USUARIOS: </h1>
         <h4>
         <div>
@@ -46,8 +45,51 @@
             <!--Table body-->
           </table>
         </div>
-  
       </h4>
+
+
+     
+
+      <h1> Transacciones: </h1>
+      <h4>
+      <div >
+        <table class="table table-hover table-fixed">
+          <!--Table head-->
+          <thead>
+              <tr>              
+                  <th>Monto</th>
+                  <th>Total Monto</th>
+                  <th>Balance</th>
+                  <th>Nombre</th>
+                  <th>Estado</th>
+                
+              </tr>
+          </thead>
+       
+          <tbody > 
+            <tr *ngFor="let trans of Transa ">
+                <td>{{trans.amount}}</td>
+                <td>{{trans.total_amount}}</td>
+                <td>{{trans.balance}}</td>
+                <td > 
+                  <em *ngIf="trans.user" class="reset"> {{trans.user.username}} </em>
+                </td>
+                <td>{{trans.status}}</td>
+               
+            </tr>
+            
+           
+          
+          </tbody>
+         
+        </table>
+    
+      </div>
+    </h4>
+
+
+
+
 
     </section>
     <!-- /.content -->

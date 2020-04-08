@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{UsersService} from '../../Services/users.service';
+import{TransactionsService} from '../../Services/transactions.service';
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html'
@@ -7,13 +9,15 @@ import{UsersService} from '../../Services/users.service';
 export class ContentComponent implements OnInit {
 
 Usuarios:any=[];
+Transa:any=[];2
 
 
-  constructor(  public Users: UsersService) {   }
+  constructor(  public Users: UsersService,public  trans:TransactionsService) {   }
 
    ngOnInit() {
     this.getUsuarios(); // cargado de la funcion lista para ser llamada
-
+    this.getTransactions();
+  
   }
   
   
@@ -27,7 +31,20 @@ Usuarios:any=[];
     console.log(datos);
 
     this.Usuarios=datos.data.results;
-  });
+  });}
 
-}
+
+  getTransactions(){
+    this.Transa=[];
+
+    this.trans.getTransactions().subscribe((datos)=>{
+      console.log(datos);
+      this.Transa=datos.data.results;
+    
+    })
+  
+
+  }
+
+
 }
