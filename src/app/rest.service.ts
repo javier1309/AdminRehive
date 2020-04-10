@@ -7,14 +7,14 @@ const endpoint='https://api.rehive.com/3/admin/accounts/';
 const httpOptions = {  // contruyendo el http options
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'Token f32500e81b5b3c19c1b9a5e7ba97328a1b24443e8dc13e9ab2b73b56b74220df'
+    'Authorization': 'Token 1b352780ddbb6ad9e415a843572ecb7202f2fcd1dbed7770f1d735b8987bbef6'
     
   })
   
 }
  //dando atributos al header
 httpOptions.headers =
-httpOptions.headers.set('Authorization', 'Token f32500e81b5b3c19c1b9a5e7ba97328a1b24443e8dc13e9ab2b73b56b74220df');
+httpOptions.headers.set('Authorization', 'Token 1b352780ddbb6ad9e415a843572ecb7202f2fcd1dbed7770f1d735b8987bbef6');
 
 @Injectable({
   providedIn: 'root'
