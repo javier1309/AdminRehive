@@ -34,4 +34,7 @@ export class ContentComponent implements OnInit {
       this.Transa=datos.data.results;
     })
   }
+ parseJsonDate(jsonDateString){
+    return new Date(parseInt(jsonDateString.replace('/Date(', '')));
+}
 }

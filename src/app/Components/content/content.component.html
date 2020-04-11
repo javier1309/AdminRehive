@@ -63,6 +63,7 @@
                 <th>Balance</th>
                 <th>Nombre</th>
                 <th>Estado</th>
+                <th>Cuenta</th>
 
             </tr>
         </thead>
@@ -76,6 +77,42 @@
                 <em *ngIf="trans.user" class="reset"> {{trans.user.username}} </em>
               </td>
               <td>{{trans.status}}</td>
+              <td>{{trans.account}}</td>
+
+          </tr>
+
+
+
+        </tbody>
+
+      </table>
+
+      <table datatable class="row-border hover">
+        <!--Table head-->
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Tipo</th>
+                <th>Subtipo</th>
+                <th>Tipo de moneda</th>
+                <th>Monto</th>
+                <th>Estado</th>
+                <th>Balance</th>
+                <th>Descripcion</th>
+
+            </tr>
+        </thead>
+
+        <tbody >
+          <tr *ngFor="let trans of Transa ">
+              <td>{{trans.user.email}}</td>
+              <td>{{trans.tx_type}}</td>
+              <td>{{trans.subtype}}</td>
+              <td >{{trans.currency.code}}  </td>
+              <td>{{trans.amount}}</td>
+              <td>{{trans.status}}</td>
+              <td>{{trans.balance}}</td>
+              <td>{{trans.note}}</td>
 
           </tr>
 
