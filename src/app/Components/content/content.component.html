@@ -29,6 +29,7 @@
                   <th>Name</th>
                   <th>Last_Name</th>
                   <th>Balance $</th>
+                  <th>Ultimo ingreso</th>
               </tr>
           </thead>
           <!--Table head-->
@@ -40,6 +41,8 @@
                 <td>{{usuario.first_name}}</td>
                 <td>{{usuario.last_name}}</td>
                 <td>{{usuario.balance}}</td>
+                <td>{{usuario.last_login  | date  :'medium'}}</td>
+
             </tr>
           </tbody>
           <!--Table body-->
@@ -64,6 +67,7 @@
                 <th>Nombre</th>
                 <th>Estado</th>
                 <th>Cuenta</th>
+               
 
             </tr>
         </thead>
@@ -78,7 +82,7 @@
               </td>
               <td>{{trans.status}}</td>
               <td>{{trans.account}}</td>
-
+       
           </tr>
 
 
@@ -116,15 +120,7 @@
 
           </tr>
 
-          Subiendo comit a javier.
-          Subiendo comit a javier
-
-
-          .
-           Haciendo Merge en Master
-
-
-
+       
 
         </tbody>
 
