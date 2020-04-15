@@ -109,10 +109,10 @@
               <td>{{trans.tx_type}}</td>
               <td>{{trans.subtype}}</td>
               <td >{{trans.currency.code}}  </td>
-              <td>{{trans.amount}}</td>
+              <td>{{trans.amount /100 |  currency}}</td>
               <td>{{trans.status}}</td>
-              <td>{{trans.balance}}</td>
-              <td>{{trans.note}}</td>
+              <td>{{trans.balance  /100 |  currency}}</td>
+              <td>{{trans.updated  | date  :'medium' }}</td>
 
           </tr>
 
