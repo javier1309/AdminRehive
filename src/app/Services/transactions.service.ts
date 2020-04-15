@@ -7,7 +7,7 @@ const endpoint='https://api.rehive.com/3/admin/transactions/';
 const httpOptions = {  // contruyendo el http options
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'Token 707b72188fb95d70fbe3a3617cbd77fada89e4da643fe83ac1496cbfbd31e1e9'
+    'Authorization': 'Token 1b352780ddbb6ad9e415a843572ecb7202f2fcd1dbed7770f1d735b8987bbef6'
     
   })
   
@@ -15,7 +15,7 @@ const httpOptions = {  // contruyendo el http options
 
  //dando atributos al header
  httpOptions.headers =
- httpOptions.headers.set('Authorization', 'Token 707b72188fb95d70fbe3a3617cbd77fada89e4da643fe83ac1496cbfbd31e1e9');
+ httpOptions.headers.set('Authorization', 'Token 1b352780ddbb6ad9e415a843572ecb7202f2fcd1dbed7770f1d735b8987bbef6');
  
 
 
