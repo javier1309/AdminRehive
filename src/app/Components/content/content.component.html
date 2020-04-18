@@ -20,7 +20,7 @@
       <h4>
       <div>
         <!--<table class="table table-hover table-fixed">-->
-          <table datatable class="row-border hover">
+          <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
           <!--Table head-->
           <thead>
               <tr>
@@ -42,9 +42,14 @@
                 <td>{{usuario.last_name}}</td>
                 <td>{{usuario.balance}}</td>
                 <td>{{usuario.last_login  | date  :'medium'}}</td>
-
             </tr>
           </tbody>
+          <tbody *ngIf="Usuarios?.length == 0">
+            <tr>
+              <td colspan="5" class="no-data-available">No data!</td>
+            </tr>
+          </tbody>
+
           <!--Table body-->
         </table>
       </div>
@@ -57,7 +62,7 @@
     <h4>
     <div >
       <!--<table class="table table-hover table-fixed">-->
-        <table datatable class="row-border hover">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
         <!--Table head-->
         <thead>
             <tr>
@@ -68,12 +73,12 @@
                 <th>Estado</th>
                 <th>Cuenta</th>
                
-
             </tr>
         </thead>
 
-        <tbody >
-          <tr *ngFor="let trans of Transa ">
+        <tbody  *ngIf="Transa?.length != 0">
+          <ng-container *ngFor="let trans of Transa ">
+          <tr>
               <td>{{trans.amount}}</td>
               <td>{{trans.total_amount}}</td>
               <td>{{trans.balance}}</td>
@@ -84,14 +89,21 @@
               <td>{{trans.account}}</td>
        
           </tr>
-
-
+        </ng-container>
 
         </tbody>
+        <tbody *ngIf="Transa?.length == 0">
+          <tr>
+            <td colspan="5" class="no-data-available">No data!</td>
+          </tr>
+        <tbody>
 
       </table>
 
-      <table datatable class="row-border hover">
+
+<h1>Summary</h1>
+
+      <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover">
         <!--Table head-->
         <thead>
             <tr>
@@ -107,9 +119,12 @@
             </tr>
         </thead>
 
-        <tbody >
-          <tr *ngFor="let trans of Transa ">
-              <td>{{trans.user.email}}</td>
+        <tbody *ngIf="Transa?.length != 0" >
+          <ng-container *ngFor="let trans of Transa ">
+          <tr>
+              <td>
+                <em *ngIf="trans.user" class="reset"> {{trans.user.email}} </em>
+              </td>
               <td>{{trans.tx_type}}</td>
               <td>{{trans.subtype}}</td>
               <td >{{trans.currency.code}}  </td>
@@ -119,11 +134,15 @@
               <td>{{trans.updated  | date  :'medium' }}</td>
 
           </tr>
-
+        </ng-container>
        
 
         </tbody>
-
+        <tbody *ngIf="Transa?.length == 0">
+          <tr>
+            <td colspan="5" class="no-data-available">No data!</td>
+          </tr>
+        <tbody>
       </table>
 
     </div>
