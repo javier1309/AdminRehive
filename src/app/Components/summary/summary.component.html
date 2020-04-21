@@ -21,6 +21,7 @@
                             
                                     <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover">
                                     <!--Table head-->
+                                    <ng-container *ngIf="Transa?.length != 0">
                                     <thead>
                                         <tr>
                                             <th>Usuario</th>
@@ -35,7 +36,7 @@
                                         </tr>
                                     </thead>
                             
-                                    <tbody *ngIf="Transa?.length != 0" >
+                                    <tbody  >
                                         <ng-container *ngFor="let trans of Transa ">
                                         <tr>
                                             <td>
@@ -51,9 +52,12 @@
                             
                                         </tr>
                                     </ng-container>
-                                    test
-                            
+                                   
                                     </tbody>
+                                  </ng-container>
+
+
+
                                     <tbody *ngIf="Transa?.length == 0">
                                         <tr>
                                         <td colspan="5" class="no-data-available"></td>
