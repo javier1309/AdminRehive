@@ -12,6 +12,7 @@ import { SettingComponent } from './Components/setting/setting.component';
 import { UsersComponent } from './Components/users/users.component';
 import { TransactionsComponent } from './Components/transactions/transactions.component';
 import {Routes, RouterModule} from '@angular/router';
+import { SummaryComponent } from './Components/summary/summary.component';
 
 
 
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
   {path:'', component: UsersComponent},
   {path:'users', component: UsersComponent},
   {path:'transactions', component: TransactionsComponent},
+  {path:'summary', component: SummaryComponent},
 ];
 
 
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     FooterComponent,
     SettingComponent,
     UsersComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

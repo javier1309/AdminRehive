@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import{ TransactionsService } from '../../Services/transactions.service';
 import { Subject } from 'rxjs';
 @Component({
-  selector: 'app-transactions',
-  templateUrl: './transactions.component.html'
-
+  selector: 'app-summary',
+  templateUrl: './summary.component.html'
+ 
 })
-export class TransactionsComponent implements OnInit {
+export class SummaryComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
   Transa:any=[];
@@ -15,9 +15,7 @@ export class TransactionsComponent implements OnInit {
   constructor(public  trans:TransactionsService) { }
 
   ngOnInit(){
-    this.getTransactions(); 
-
-    
+    this.getTransactions();
 
     this.dtOptions = {
       responsive: true,
@@ -30,7 +28,7 @@ export class TransactionsComponent implements OnInit {
   getTransactions(){
     this.Transa=[];
     this.trans.getTransactions().subscribe((datos)=>{
-   
+
       this.Transa=datos.data.results;
       this.dtTrigger.next();
     });

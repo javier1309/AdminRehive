@@ -3,7 +3,7 @@ import{HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import{Observable, of} from 'rxjs';
 
 
-const endpoint='https://api.rehive.com/3/admin/transactions/?page_size=100000';
+const endpoint='https://api.rehive.com/3/admin/transactions/?page_size=600';
 
 const httpOptions = {  // contruyendo el http options
   headers: new HttpHeaders({

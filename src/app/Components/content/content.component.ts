@@ -42,7 +42,7 @@ export class ContentComponent implements OnInit {
   getUsuarios(){
     this.Usuarios=[];
     this.Users.getUsers().subscribe((datos) =>{
-      console.log(datos);
+      
       this.Usuarios=datos.data.results;
       //Llamamos al dtTrigger para que se modifique la tabla cada vez
       //que exista un cambio
@@ -53,7 +53,7 @@ export class ContentComponent implements OnInit {
   getTransactions(){
     this.Transa=[];
     this.trans.getTransactions().subscribe((datos)=>{
-      console.log(datos);
+      
       this.Transa=datos.data.results;
       this.dtTrigger.next();
     });

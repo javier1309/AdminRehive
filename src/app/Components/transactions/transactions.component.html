@@ -17,49 +17,43 @@
               <!--------------------------
                 | Your Page Content Here |  
                 -------------------------->
-               <h1>Summary</h1>
-
-              <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover">
-                <!--Table head-->
-                <thead>
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                  <!--Table head-->
+                  <thead>
+                      <tr>
+                          <th>Monto</th>
+                          <th>Total Monto</th>
+                          <th>Balance</th>
+                          <th>Nombre</th>
+                          <th>Estado</th>
+                          <th>Cuenta</th>
+                         
+                      </tr>
+                  </thead>
+          
+                  <tbody  *ngIf="Transa?.length != 0">
+                    <ng-container *ngFor="let trans of Transa ">
                     <tr>
-                        <th>Usuario</th>
-                        <th>Tipo</th>
-                        <th>Subtipo</th>
-                        <th>Tipo de moneda</th>
-                        <th>Monto</th>
-                        <th>Estado</th>
-                        <th>Balance</th>
-                        <th>Descripcion</th>
-        
+                        <td>{{trans.amount}}</td>
+                        <td>{{trans.total_amount}}</td>
+                        <td>{{trans.balance}}</td>
+                        <td >
+                          <em *ngIf="trans.user" class="reset"> {{trans.user.username}} </em>
+                        </td>
+                        <td>{{trans.status}}</td>
+                        <td>{{trans.account}}</td>
+                 
                     </tr>
-                </thead>
-        
-                <tbody *ngIf="Transa?.length != 0" >
-                  <ng-container *ngFor="let trans of Transa ">
-                  <tr>
-                      <td>
-                        <em *ngIf="trans.user" class="reset"> {{trans.user.email}} </em>
-                      </td>
-                      <td>{{trans.tx_type}}</td>
-                      <td>{{trans.subtype}}</td>
-                      <td >{{trans.currency.code}}  </td>
-                      <td>{{trans.amount /100 |  currency}}</td>
-                      <td>{{trans.status}}</td>
-                      <td>{{trans.balance  /100 |  currency}}</td>
-                      <td>{{trans.updated  | date  :'medium' }}</td>
-        
-                  </tr>
-                </ng-container>
-              test
-        
-                </tbody>
-                <tbody *ngIf="Transa?.length == 0">
-                  <tr>
-                    <td colspan="5" class="no-data-available">No data!</td>
-                  </tr>
-                <tbody>
-              </table>
+                  </ng-container>
+          
+                  </tbody>
+                  <tbody *ngIf="Transa?.length == 0">
+                    <tr>
+                      <td colspan="5" class="no-data-available">No data!</td>
+                    </tr>
+                  <tbody>
+          
+                </table>
             </h4>
       </div>
     

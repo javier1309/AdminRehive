@@ -28,7 +28,7 @@ export class UsersComponent implements OnInit {
   getUsuarios(){
     this.Usuarios=[];
     this.Users.getUsers().subscribe((datos) =>{
-      console.log(datos);
+     // console.log(datos);
       this.Usuarios=datos.data.results;
       //Llamamos al dtTrigger para que se modifique la tabla cada vez
       //que exista un cambio
