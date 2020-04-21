@@ -19,7 +19,9 @@
                 -------------------------->
                 <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
                   <!--Table head-->
+                  <ng-container *ngIf="Transa?.length != 0">
                   <thead>
+
                       <tr>
                           <th>Monto</th>
                           <th>Total Monto</th>
@@ -47,6 +49,7 @@
                   </ng-container>
           
                   </tbody>
+                  </ng-container>
                   <tbody *ngIf="Transa?.length == 0">
                     <tr>
                       <p>

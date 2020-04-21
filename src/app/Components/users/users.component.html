@@ -26,7 +26,9 @@
           <!--<table class="table table-hover table-fixed">-->
             <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" >
             <!--Table head-->
+            <ng-container *ngIf="Usuarios?.length != 0">
             <thead>
+
                 <tr>
                     <th>Email</th>
                     <th>Username</th>
@@ -51,6 +53,7 @@
                   <td>{{usuario.last_login  | date  :'medium'}}</td>
               </tr>
             </tbody>
+            </ng-container>
             <tbody *ngIf="Usuarios?.length == 0">
               <tr>
                 <td colspan="10" class="no-data-available"></td>
