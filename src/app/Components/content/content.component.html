@@ -28,6 +28,7 @@
                   <th>Username</th>
                   <th>Name</th>
                   <th>Last_Name</th>
+                  <th>Cuenta</th>
                   <th>Balance $</th>
                   <th>Ultimo ingreso</th>
               </tr>
@@ -40,7 +41,9 @@
                 <td>{{usuario.username | uppercase}}</td>
                 <td>{{usuario.first_name}}</td>
                 <td>{{usuario.last_name}}</td>
-                <td>{{usuario.balance}}</td>
+                <td>{{usuario.account}}</td>
+                <td>{{usuario.balance/100 | currency}}</td>
+               
                 <td>{{usuario.last_login  | date  :'medium'}}</td>
             </tr>
           </tbody>

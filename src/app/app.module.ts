@@ -9,7 +9,19 @@ import { MenuComponent } from './Components/menu/menu.component';
 import { ContentComponent } from './Components/content/content.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { SettingComponent } from './Components/setting/setting.component';
-import { UsersComponent } from './users/users.component';
+import { UsersComponent } from './Components/users/users.component';
+import { TransactionsComponent } from './Components/transactions/transactions.component';
+import {Routes, RouterModule} from '@angular/router';
+
+
+
+//declarando las rutas 
+const appRoutes: Routes = [
+  {path:'', component: UsersComponent},
+  {path:'users', component: UsersComponent},
+  {path:'transactions', component: TransactionsComponent},
+];
+
 
 @NgModule({
   declarations: [
@@ -19,12 +31,14 @@ import { UsersComponent } from './users/users.component';
     ContentComponent,
     FooterComponent,
     SettingComponent,
-    UsersComponent
+    UsersComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    RouterModule.forRoot(appRoutes)       //importando las mismas rutas
   ],
   providers: [],
   bootstrap: [AppComponent]
