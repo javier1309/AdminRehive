@@ -15,6 +15,7 @@ export class ContentComponent implements OnInit {
  dtOptions: DataTables.Settings = {};
  Usuarios:any=[];
  Transa:any=[];
+ //myDate = new Date();
 
  dtTrigger: Subject<any> = new Subject<any>();
 
@@ -29,7 +30,7 @@ export class ContentComponent implements OnInit {
       responsive: true,
       pagingType: 'full_numbers',
       pageLength: 15,
-     
+
     };
   }
 
@@ -42,18 +43,19 @@ export class ContentComponent implements OnInit {
   getUsuarios(){
     this.Usuarios=[];
     this.Users.getUsers().subscribe((datos) =>{
-      
+
       this.Usuarios=datos.data.results;
       //Llamamos al dtTrigger para que se modifique la tabla cada vez
       //que exista un cambio
       this.dtTrigger.next();
+      //this.myDate = Date.now();
     });
   }
 
   getTransactions(){
     this.Transa=[];
     this.trans.getTransactions().subscribe((datos)=>{
-      
+
       this.Transa=datos.data.results;
       this.dtTrigger.next();
     });
