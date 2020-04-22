@@ -34,7 +34,7 @@ export class UsersComponent implements OnInit {
         pagingType: 'full_numbers',
         pageLength: 15, }
 
-        
+
 //Contador de segundos interval contador y timer para mostrar despues de cierto tiempo
  //       const timerr= interval(4000);
 
@@ -45,7 +45,7 @@ export class UsersComponent implements OnInit {
   getUsuarios(){
     this.Usuarios=[];
     this.Users.getUsers().subscribe((datos) =>{
-     // console.log(datos);
+     console.log(datos);
       this.Usuarios=datos.data.results;
       //Llamamos al dtTrigger para que se modifique la tabla cada vez
       //que exista un cambio
@@ -53,7 +53,17 @@ export class UsersComponent implements OnInit {
     });
    
   }
+//  getUsuarios(page=1,size=20){
+   // this.Usuarios=[];
+   // this.Users.getUsers(page,size).subscribe((datos) =>{
+    // console.log(datos);
+   //   this.Usuarios=datos.data.results;
+                                           //Llamamos al dtTrigger para que se modifique la tabla cada vez
+                                           //que exista un cambio
+   //   this.dtTrigger.next();
+  //  });
+   
+  }
 
 
 
-}
