@@ -13,6 +13,7 @@ import { UsersComponent } from './Components/users/users.component';
 import { TransactionsComponent } from './Components/transactions/transactions.component';
 import {Routes, RouterModule} from '@angular/router';
 import { SummaryComponent } from './Components/summary/summary.component';
+import { Summary2Component } from './Components/summary2/summary2.component';
 
 
 
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   {path:'users', component: UsersComponent},
   {path:'transactions', component: TransactionsComponent},
   {path:'summary', component: SummaryComponent},
+  {path:'summary2', component: Summary2Component}
 ];
 
 
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     SettingComponent,
     UsersComponent,
     TransactionsComponent,
-    SummaryComponent
+    SummaryComponent,
+    Summary2Component
   ],
   imports: [
     BrowserModule,
