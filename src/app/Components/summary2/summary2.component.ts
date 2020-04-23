@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{ CurrencyService } from '../../Services/currency.service';
 
 @Component({
   selector: 'app-summary2',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Summary2Component implements OnInit {
 
-  constructor() { }
+  Currency: any[];
 
-  ngOnInit(): void {
+  constructor(public curr:CurrencyService) { }
+
+  ngOnInit() {
+    this.getCurrency();
+  }
+
+  getCurrency(){
+    this.Currency=[];
+    this.curr.getCurrency().subscribe((datos)=>{
+
+      this.Currency=datos.data;
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{ TransactionsService } from '../../Services/transactions.service';
 import { Subject } from 'rxjs';
+
 @Component({
   selector: 'app-transactions',
   templateUrl: './transactions.component.html'
@@ -15,22 +16,22 @@ export class TransactionsComponent implements OnInit {
   constructor(public  trans:TransactionsService) { }
 
   ngOnInit(){
-    this.getTransactions(); 
+    this.getTransactions();
 
-    
+
 
     this.dtOptions = {
       responsive: true,
       pagingType: 'full_numbers',
       pageLength: 15,
-     
+
     };
   }
-  
+
   getTransactions(){
     this.Transa=[];
     this.trans.getTransactions().subscribe((datos)=>{
-   
+
       this.Transa=datos.data.results;
       this.dtTrigger.next();
     });

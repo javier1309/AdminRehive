@@ -8,18 +8,72 @@
         <li class="active">Here</li>
       </ol>
     </section>-->
-  
+
     <!-- Main content -->
     <section class="content container-fluid ">
-  
+
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
- 
-  
-  
-  
-  
+        <h1>Summary</h1>
+
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-aqua">
+                  <i class="fa fa-usd">
+                  </i>
+                </span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Available Balance</span>
+                  <span class="info-box-number">
+                    {{Currency.available_balance_total/100 | currency}}
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col 1 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-yellow">
+                  <i class="fa fa-usd">
+                  </i>
+                </span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Balance</span>
+                  <span class="info-box-number">
+                    {{Currency.balance_total/100 | currency}}
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col 2 -->
+
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-green">
+                  <i class="fa fa-money">
+                  </i>
+                </span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Deposit</span>
+                  <span class="info-box-number">
+                    {{Currency.balance_24h/100 | currency}}
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col 3 -->
+          </div>
+
     </section>
     <!-- /.content -->
   </div>
