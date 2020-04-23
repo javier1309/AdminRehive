@@ -1,146 +1,106 @@
 <div class="content-wrapper content-height">
-      <section class="content container-fluid ">
+  <section class="content container-fluid ">
         <h1>Summary</h1>
-          <div class="row">
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="info-box">
-                                    <span class="info-box-icon bg-grey">
-                                      <i class="fa fa-money">
-                                      </i>
-                                    </span>
-                                    <div class="info-box-content">
-                                      <span class="info-box-text">Total Income</span>
-                                      <span class="info-box-number">
-                                        {{currency.sum_credits_pending / 100 | currency}}
-                                      </span>
-                                      <div class="btn-group" >                                            
-                                        <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          More Info
-                                        </button>                                
-                                        <div class="dropdown-menu">
-                                          <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                                          <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                                          <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                                          <div class="dropdown-divider"></div>                                              
-                                          <a class="dropdown-item" href="">Sign Out</a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="info-box">
-                                  <span class="info-box-icon bg-aqua">
-                                    <i class="fa fa-usd">
-                                    </i>
-                                  </span>
-                                  <div class="info-box-content">
-                                    <span class="info-box-text">Total Balance</span>
-                                    <span class="info-box-number">
-                                      {{currency.balance_total / 100 | currency}}
-                                    </span>
-                                                <div class="btn-group" >                                            
-                                                  <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    More Info
-                                                  </button>                                
-                                                  <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                                                    <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                                                    <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                                                    <div class="dropdown-divider"></div>                                              
-                                                    <a class="dropdown-item" href="">Sign Out</a>
-                                                  </div>
-                                                </div>
-                                  </div>                      
-                                </div>                            
-                              </div>        
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="info-box">
-                                  <span class="info-box-icon bg-yellow">
-                                    <i class="fa fa-usd">
-                                    </i>
-                                  </span>
-                                  <div class="info-box-content">
-                                    <span class="info-box-text">Total Available Balance</span>
-                                    <span class="info-box-number">
-                                      {{currency.available_balance_total / 100 | currency}}
-                                    </span>
-                                              <div class="btn-group" >                                            
-                                                <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                  More Info
-                                                </button>                                
-                                                <div class="dropdown-menu">
-                                                  <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                                                  <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                                                  <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                                                  <div class="dropdown-divider"></div>                                              
-                                                  <a class="dropdown-item" href="">Sign Out</a>
-                                                </div>
-                                    </div>
-                                  </div>                            
-                                </div>                            
-                              </div>
-                          <div class="clearfix visible-sm-block"></div>
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="info-box">
-                                  <span class="info-box-icon bg-green">
-                                    <i class="fa fa-money">
-                                    </i>
-                                  </span>
-                                  <div class="info-box-content">
-                                    <span class="info-box-text">Total Pending Deposits</span>
-                                    <span class="info-box-number">
-                                      {{currency.sum_debits_pending / 100 | currency}}
-                                    </span> 
-                                          <div class="btn-group" >                                            
-                                            <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                              More Info
-                                            </button>                                
-                                            <div class="dropdown-menu">
-                                              <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                                              <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                                              <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                                              <div class="dropdown-divider"></div>                                              
-                                              <a class="dropdown-item" href="">Sign Out</a>
-                                            </div>
-                                          </div>
-                                  </div>            
-                                </div>             
-                              </div>   
-          </div>
-          <div class="row">
-            <div class="small-box bg-blue col-md-3 col-sm-6 col-xs-12">
-              <div class="inner">
-                <h3>Total Income</h3>
-                <p>{{currency.sum_credits_pending / 100 | currency}}</p>
-              </div>
-              <div class="icon">
-                <i class="fa fa-money"></i>
-              </div>
-
-              <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More info <i class="fa fa-arrow-circle-right"></i>
-              </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                <div class="dropdown-divider"></div>                                              
-                <a class="dropdown-item" href="">Sign Out</a>
+    <div class="row">   
+             <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="small-box bg-blue">
+                <div class="inner">
+                  <h2>Total Income</h2>
+                  <p>{{currency.sum_credits_complete / 100 | currency}}</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-money"></i>
+                </div>
+                <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                  <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                  <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                  <div class="dropdown-divider"></div>                                              
+                  <a class="dropdown-item" href="">Sign Out</a>
+                </div>
               </div>
             </div>
-            <div class="small-box bg-yellow col-md-3 col-sm-6 col-xs-12">
-              <div class="inner">
-                <h3>Total Balance</h3>
-                <p>{{currency.balance_total / 100 | currency}}</p>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h2>Total Balance</h2>
+                  <p>{{currency.balance_total / 100 | currency}}</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-usd"></i>
+                </div>
+                <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                  <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                  <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                  <div class="dropdown-divider"></div>                                              
+                  <a class="dropdown-item" href="">Sign Out</a>
+                </div>
               </div>
-              <div class="icon">
-                <i class="fa fa-usd"></i>
-              </div>            
-                  <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More info <i class="fa fa-arrow-circle-right"></i>
-                  </a>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h2>Total Available Balance</h2>
+                  <p>{{currency.available_balance_total / 100 | currency}}</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-usd"></i>
+                 </div>
+                 <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                  <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                  <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                  <div class="dropdown-divider"></div>                                              
+                  <a class="dropdown-item" href="">Sign Out</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h2>Total Pending Deposits</h2>
+                  <p>{{currency.sum_debits_pending / 100 | currency}}</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-money"></i>
+                </div>
+                <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                  <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                  <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                  <div class="dropdown-divider"></div>                                              
+                  <a class="dropdown-item" href="">Sign Out</a>
+                </div>
+              </div>
+            </div>      
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-grey">
+                <i class="fa fa-money">
+                </i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Total Income</span>
+                <span class="info-box-number">
+                  {{currency.sum_credits_pending / 100 | currency}}
+                </span>
+                <div class="btn-group" >                                            
+                  <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More Info
+                  </button>                                
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
                     <a class="dropdown-item" href="">Deposito 2</a>    <br />
@@ -148,54 +108,93 @@
                     <div class="dropdown-divider"></div>                                              
                     <a class="dropdown-item" href="">Sign Out</a>
                   </div>
-
-            </div>
-
-            <div class="small-box bg-aqua col-md-3 col-sm-6 col-xs-12">
-              <div class="inner">
-                <h3>Total Available Balance</h3>
-                <p>{{currency.available_balance_total / 100 | currency}}</p>
+                </div>
               </div>
-              <div class="icon">
-                <i class="fa fa-usd"></i>
-              </div>
-            
-                  <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More info <i class="fa fa-arrow-circle-right"></i>
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                    <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                    <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                    <div class="dropdown-divider"></div>                                              
-                    <a class="dropdown-item" href="">Sign Out</a>
-                   </div>
-
-            </div>
-
-            <div class="small-box bg-green col-md-3 col-sm-6 col-xs-12">
-              <div class="inner">
-                <h3>Total Pending Deposits</h3>
-                <p>{{currency.sum_debits_pending / 100 | currency}}</p>
-              </div>
-              <div class="icon">
-                <i class="fa fa-money"></i>
-              </div>             
-                    <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      More info <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                      <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                      <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                      <div class="dropdown-divider"></div>                                              
-                      <a class="dropdown-item" href="">Sign Out</a>
-                    </div>
-
             </div>
           </div>
-    </section>
-  </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua">
+              <i class="fa fa-usd">
+              </i>
+            </span>
+            <div class="info-box-content">
+              <span class="info-box-text">Total Balance</span>
+              <span class="info-box-number">
+                {{currency.balance_total / 100 | currency}}
+              </span>
+                    <div class="btn-group" >                                            
+                      <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More Info
+                      </button>                                
+                       <div class="dropdown-menu">
+                          <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                          <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                          <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                         <div class="dropdown-divider"></div>                                              
+                          <a class="dropdown-item" href="">Sign Out</a>
+                       </div>
+                    </div>
+            </div>                      
+          </div>                            
+        </div>        
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-yellow">
+                  <i class="fa fa-usd">
+                  </i>
+                </span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Available Balance</span>
+                  <span class="info-box-number">
+                    {{currency.available_balance_total / 100 | currency}}
+                  </span>
+                            <div class="btn-group" >                                            
+                              <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More Info
+                              </button>                                
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                                <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                                <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                                <div class="dropdown-divider"></div>                                              
+                                <a class="dropdown-item" href="">Sign Out</a>
+                              </div>
+                            </div>
+                </div>                            
+              </div>                            
+            </div>
+              <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-green">
+                  <i class="fa fa-money">
+                  </i>
+                </span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Pending Deposits</span>
+                  <span class="info-box-number">
+                    {{currency.sum_debits_pending / 100 | currency}}
+                  </span> 
+                        <div class="btn-group" >                                            
+                          <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More Info
+                          </button>                                
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                            <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                            <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                            <div class="dropdown-divider"></div>                                              
+                            <a class="dropdown-item" href="">Sign Out</a>
+                          </div>
+                        </div>
+                </div>            
+              </div>             
+            </div> 
+
+    </div>
+  </section>
+</div>
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
