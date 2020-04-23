@@ -7,7 +7,7 @@ import{ CurrencyService } from '../../Services/currency.service';
   styleUrls: ['./summary2.component.scss']
 })
 export class Summary2Component implements OnInit {
-currency:any=[];
+currency: any=[];
 
 
   constructor(public curr:CurrencyService) { }
