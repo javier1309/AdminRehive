@@ -107,81 +107,9 @@
                                           </div>
                                   </div>            
                                 </div>             
-                              </div>      
-=======
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-grey">
-                  <i class="fa fa-money">
-                  </i>
-                </span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Total Income</span>
-                  <span class="info-box-number">
-                    {{currency.sum_credits_pending / 100 | currency}}
-                  </span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-yellow">
-                  <i class="fa fa-usd">
-                  </i>
-                </span>
-                <div class="info-box-content" onclick="">
-                  <span class="info-box-text">Total Balance</span>
-                  <span class="info-box-number">
-                    {{currency.balance_total / 100 | currency}}
-                  </span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-aqua">
-                  <i class="fa fa-usd">
-                  </i>
-                </span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Total Available Balance</span>
-                  <span class="info-box-number">
-                    {{currency.available_balance_total / 100 | currency}}
-                  </span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-green">
-                  <i class="fa fa-money">
-                  </i>
-                </span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Total Pending Deposits</span>
-                  <span class="info-box-number">
-                    {{currency.sum_debits_pending / 100 | currency}}
-                  </span>
-                </div>
-
-              </div>
-
-            </div>
-
+                              </div>   
           </div>
-
           <div class="row">
-
             <div class="small-box bg-blue col-md-3 col-sm-6 col-xs-12">
               <div class="inner">
                 <h3>Total Income</h3>
@@ -190,11 +118,18 @@
               <div class="icon">
                 <i class="fa fa-money"></i>
               </div>
-              <a href="#" class="small-box-footer">
+
+              <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 More info <i class="fa fa-arrow-circle-right"></i>
               </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                <div class="dropdown-divider"></div>                                              
+                <a class="dropdown-item" href="">Sign Out</a>
+              </div>
             </div>
-
             <div class="small-box bg-yellow col-md-3 col-sm-6 col-xs-12">
               <div class="inner">
                 <h3>Total Balance</h3>
@@ -202,10 +137,18 @@
               </div>
               <div class="icon">
                 <i class="fa fa-usd"></i>
-              </div>
-              <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
-              </a>
+              </div>            
+                  <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More info <i class="fa fa-arrow-circle-right"></i>
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                    <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                    <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                    <div class="dropdown-divider"></div>                                              
+                    <a class="dropdown-item" href="">Sign Out</a>
+                  </div>
+
             </div>
 
             <div class="small-box bg-aqua col-md-3 col-sm-6 col-xs-12">
@@ -216,9 +159,18 @@
               <div class="icon">
                 <i class="fa fa-usd"></i>
               </div>
-              <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
-              </a>
+            
+                  <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More info <i class="fa fa-arrow-circle-right"></i>
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                    <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                    <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                    <div class="dropdown-divider"></div>                                              
+                    <a class="dropdown-item" href="">Sign Out</a>
+                   </div>
+
             </div>
 
             <div class="small-box bg-green col-md-3 col-sm-6 col-xs-12">
@@ -228,13 +180,19 @@
               </div>
               <div class="icon">
                 <i class="fa fa-money"></i>
-              </div>
-              <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
-              </a>
-            </div>
+              </div>             
+                    <a href="#" class="small-box-footer btn-group btn btn-primary dropdown-toggle fa fa-info"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                      <a class="dropdown-item" href="">Deposito 2</a>    <br />
+                      <a class="dropdown-item" href="">Deposito 3</a>    <br />
+                      <div class="dropdown-divider"></div>                                              
+                      <a class="dropdown-item" href="">Sign Out</a>
+                    </div>
 
->>>>>>> 435ea80c024963b4f9282bd3da046931c54f40ad
+            </div>
           </div>
     </section>
   </div>
