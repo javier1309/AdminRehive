@@ -27,31 +27,31 @@
                 <div class="info-box-content">
                   <span class="info-box-text">Total Available Balance</span>
                   <span class="info-box-number">
-                    {{Currency.available_balance_total/100 | currency}}
+                    {{currency.available_balance_total/100 | currency}}
                   </span>
                 </div>
-                <!-- /.info-box-content -->
+   
               </div>
-              <!-- /.info-box -->
+      
             </div>
-            <!-- /.col 1 -->
+    
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
                 <span class="info-box-icon bg-yellow">
                   <i class="fa fa-usd">
                   </i>
                 </span>
-                <div class="info-box-content">
+                <div class="info-box-content" onclick="">
                   <span class="info-box-text">Total Balance</span>
                   <span class="info-box-number">
-                    {{Currency.balance_total/100 | currency}}
+                    {{currency.balance_total/100 | currency}}
                   </span>
                 </div>
-                <!-- /.info-box-content -->
+          
               </div>
-              <!-- /.info-box -->
+          
             </div>
-            <!-- /.col 2 -->
+   
 
             <div class="clearfix visible-sm-block"></div>
 
@@ -64,14 +64,15 @@
                 <div class="info-box-content">
                   <span class="info-box-text">Deposit</span>
                   <span class="info-box-number">
-                    {{Currency.balance_24h/100 | currency}}
+                    {{currency.balance_24h/100 | currency}}
+                    
                   </span>
                 </div>
-                <!-- /.info-box-content -->
+            
               </div>
-              <!-- /.info-box -->
+             
             </div>
-            <!-- /.col 3 -->
+      
           </div>
 
     </section>

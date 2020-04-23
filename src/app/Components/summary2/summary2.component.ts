@@ -7,8 +7,8 @@ import{ CurrencyService } from '../../Services/currency.service';
   styleUrls: ['./summary2.component.scss']
 })
 export class Summary2Component implements OnInit {
+currency:any=[];
 
-  Currency: any[];
 
   constructor(public curr:CurrencyService) { }
 
@@ -17,10 +17,11 @@ export class Summary2Component implements OnInit {
   }
 
   getCurrency(){
-    this.Currency=[];
+    this.currency=[];
     this.curr.getCurrency().subscribe((datos)=>{
 
-      this.Currency=datos.data;
+      this.currency=datos.data;
+      console.log(datos);
     });
   }
 

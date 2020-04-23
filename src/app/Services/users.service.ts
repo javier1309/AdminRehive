@@ -15,7 +15,8 @@ const httpOptions = {  // contruyendo el http options
 
  //dando atributos al header
 
- httpOptions.headers.set('Authorization', 'Token 1b352780ddbb6ad9e415a843572ecb7202f2fcd1dbed7770f1d735b8987bbef6');
+ //httpOptions.headers.set('Authorization', 'Token 1b352780ddbb6ad9e415a843572ecb7202f2fcd1dbed7770f1d735b8987bbef6');
+ httpOptions.headers.set('Authorization','Content-type');
  
 
 
@@ -35,7 +36,7 @@ export class UsersService {
   getUsers(): Observable<any> {
    
     let users=this.http.get(endpoint,httpOptions);
-    console.log(users);
+    //console.log(users);
     return users ;  //get para retornar valores
   } 
 
