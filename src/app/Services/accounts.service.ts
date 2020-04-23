@@ -7,16 +7,16 @@ const endpoint='https://api.rehive.com/3/admin/';
 const httpOptions = {  // contruyendo el http options
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'Token 1b352780ddbb6ad9e415a843572ecb7202f2fcd1dbed7770f1d735b8987bbef6'
-    
+    'Authorization': 'Token 33c79b0a68cde868e664a085c3b0926b49e203f5dd31eae711dc75c578b94d47'
+
   })
-    
+
 }
 
  //dando atributos al header
  httpOptions.headers =
- httpOptions.headers.set('Authorization', 'Token 1b352780ddbb6ad9e415a843572ecb7202f2fcd1dbed7770f1d735b8987bbef6');
- 
+ httpOptions.headers.set('Authorization', 'Token 33c79b0a68cde868e664a085c3b0926b49e203f5dd31eae711dc75c578b94d47');
+
 
 
 
@@ -33,10 +33,10 @@ export class AccountsService {
 
 
   getAcounts(): Observable<any> {
-   
-    
+
+
     return this.http.get(endpoint,httpOptions);   //get para retornar valores
 
 
-  } 
+  }
 }
