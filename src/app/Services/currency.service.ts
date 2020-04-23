@@ -13,7 +13,7 @@ const httpOptions = {  // contruyendo el http options
 }
 
  //dando atributos al header
- httpOptions.headers =
+
  httpOptions.headers.set('Authorization', 'Token 33c79b0a68cde868e664a085c3b0926b49e203f5dd31eae711dc75c578b94d47');
 
 @Injectable({
