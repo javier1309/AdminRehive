@@ -32,7 +32,10 @@ export class UsersComponent implements OnInit {
         this.dtOptions = {
         responsive: true,
         pagingType: 'full_numbers',
-        pageLength: 15, }
+        pageLength: 15,  
+        paging:true,
+        scrollCollapse: false,
+        scrollY:"75vh", }
 
 
 //Contador de segundos interval contador y timer para mostrar despues de cierto tiempo

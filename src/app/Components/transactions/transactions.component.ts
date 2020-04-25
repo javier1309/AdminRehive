@@ -24,6 +24,10 @@ export class TransactionsComponent implements OnInit {
       responsive: true,
       pagingType: 'full_numbers',
       pageLength: 15,
+      paging:true,
+      scrollCollapse: false,
+      scrollY:"75vh",
+
 
     };
   }
