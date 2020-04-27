@@ -33,7 +33,7 @@ export class AccountsComponent implements OnInit {
 
       this.Cuentas=datos.data.results;
       this.dtTrigger.next();
-      console.log(datos);
+    // console.log(datos);
     });
   }
   

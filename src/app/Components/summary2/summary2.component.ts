@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ CurrencyService } from '../../Services/currency.service';
+import{ UsersService } from '../../Services/users.service';
 
 @Component({
   selector: 'app-summary2',
@@ -8,12 +9,15 @@ import{ CurrencyService } from '../../Services/currency.service';
 })
 export class Summary2Component implements OnInit {
 currency: any=[];
+Usuarios: any=[];
 
 
-  constructor(public curr:CurrencyService) { }
+  constructor(public curr:CurrencyService, private Users:UsersService) { }
 
   ngOnInit() {
     this.getCurrency();
+    this.getUsuarios();
+    console.log(this.Usuarios);
   }
 
   getCurrency(){
@@ -21,8 +25,15 @@ currency: any=[];
     this.curr.getCurrency().subscribe((datos)=>{
 
       this.currency=datos.data;
-      console.log(datos);
+    //  console.log(datos);
     });
-  }
 
+  }
+  getUsuarios(){
+    this.Usuarios=[];
+    this.Users.getUsers().subscribe((datos) =>{
+     this.Usuarios=datos.data;
+    });
+
+}
 }

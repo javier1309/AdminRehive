@@ -1,26 +1,84 @@
-<!-- Content Wrapper. Contains page content -->
+
+<!-- <style
+  >
+  body {
+    font-family: Arial;
+  }
+  .containerr {
+    display: grid;
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    /* grid-template-rows: 215% ; */
+    /* grid-template:  1fr 1fr 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr; */
+    grid-template: 100px 1fr 150px/ 200px 1fr;
+    /* grid-column-gap: 30px; */
+    /* grid-row-gap: 30px; */
+    /* grid-gap: filas columnas; */ 
+    grid-gap: 15px;
+    height: 100vh;
+    grid-template-areas: "header header"
+                           "left contenido"
+                           "footer footer";
+  }
+  .item{
+    background: rgb(14, 124, 197);
+    padding: 10px;
+    border: 1px solid blue;
+   
+  }
+  .item:nth-of-type(4){
+    background: burlywood;
+    overflow: auto;
+    display:grid;
+    grid-template: 50px 50px 50px / 200px 200px 200px;
+
+  }
+  .item .item{
+    background: chocolate;
+  }
+  .header {
+      grid-area: header;
+    }
+    .left {
+      grid-area: left;
+    }
+    .contenido {
+      grid-area: contenido;
+    }
+    .footer {
+      grid-area: footer;
+
+    }
+        <div class="item">contenido #1</div> NO TOCAR
+       <div class="item">contenido #2</div>
+       <div class="item">contenido #3</div>
+       <div class="item">
+        <div class="item">subitem #1</div>
+        <div class="item">subitem #2</div>
+        <div class="item">subitem #3</div>
+        <div class="item">subitem #4</div>
+        <div class="item">subitem #5</div>
+        <div class="item">subitem #6</div>
+       </div>
+       <div class="item">contenido #5</div>
+       <div class="item">contenido #6</div>
+       <div class="item">contenido #7</div>
+       <div class="item">contenido #8</div>
+       <div class="item">contenido #9</div>
+       <div class="item">contenido #10</div>
+       <div class="item">contenido #11</div>
+       <div class="item">contenido #12</div> 
+</style> -->
+
 <div class="content-wrapper content-height">
-    <!-- Content Header (Page header) -->
-    <!--<section class="content-header">
-        <small></small>
-      <ol cla ss="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>-->
+  <!-- <section class="containerr"> -->
+  <section class="content container-fluid">
   
-    <!-- Main content -->
-    <section class="content container-fluid ">
-  
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
   <h4>
       <div>
                             <h1>Summary</h1>
                             
                                     <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover">
-                                    <!--Table head-->
+                                
                                     <ng-container *ngIf="Transa?.length != 0">
                                     <thead>
                                         <tr>
@@ -71,9 +129,8 @@
   
   
   
-  
+ 
   
     </section>
-    <!-- /.content -->
+
   </div>
-  <!-- /.content-wrapper -->
