@@ -1,11 +1,13 @@
 <div class="content-wrapper content-height">
   <section class="content container-fluid ">
-        <h1>Summary</h1>
-    <div class="row">   
+        <h1>CASH Summary</h1>
+
+    <!-- First Row -->
+    <div class="row">
              <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="small-box bg-blue">
                 <div class="inner">
-                  <h2>Total Income</h2>
+                  <h2>Total Credits Income</h2>
                   <p>{{currency.sum_credits_complete / 100 | currency}}</p>
                 </div>
                 <div class="icon">
@@ -15,16 +17,16 @@
                   More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                  <a class="dropdown-item" href="">Deposito 1</a>    <br />
                   <a class="dropdown-item" href="">Deposito 2</a>    <br />
                   <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                  <div class="dropdown-divider"></div>                                              
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="">Sign Out</a>
                 </div>
               </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="small-box bg-yellow">
+              <div class="small-box bg-aqua">
                 <div class="inner">
                   <h2>Total Balance</h2>
                   <p>{{currency.balance_total / 100 | currency}}</p>
@@ -36,16 +38,16 @@
                   More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" >Deposito 1</a>    <br />                                              
+                  <a class="dropdown-item" >Deposito 1</a>    <br />
                   <a class="dropdown-item" >Deposito 2</a>    <br />
                   <a class="dropdown-item" >Deposito 3</a>    <br />
-                  <div class="dropdown-divider"></div>                                              
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" >Sign Out</a>
                 </div>
               </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="small-box bg-aqua">
+              <div class="small-box bg-orange">
                 <div class="inner">
                   <h2>Total Available Balance</h2>
                   <p>{{currency.available_balance_total / 100 | currency}}</p>
@@ -57,10 +59,10 @@
                   More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                  <a class="dropdown-item" href="">Deposito 1</a>    <br />
                   <a class="dropdown-item" href="">Deposito 2</a>    <br />
                   <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                  <div class="dropdown-divider"></div>                                              
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="">Sign Out</a>
                 </div>
               </div>
@@ -68,8 +70,8 @@
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h2>Total Pending Deposits</h2>
-                  <p>{{currency.sum_debits_pending / 100 | currency}}</p>
+                  <h2>Total Pending Debits</h2>
+                  <p>{{currency.sum_debits_complete / 100 | currency}}</p>
                 </div>
                 <div class="icon">
                   <i class="fa fa-money"></i>
@@ -78,21 +80,72 @@
                   More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
+                  <a class="dropdown-item" href="">Deposito 1</a>    <br />
                   <a class="dropdown-item" href="">Deposito 2</a>    <br />
                   <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                  <div class="dropdown-divider"></div>                                              
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="">Sign Out</a>
                 </div>
               </div>
-            </div>      
+            </div>
+          </div>
+
+            <!-- Second Row -->
+            <div class="row">
+                     <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="small-box bg-teal">
+                        <div class="inner">
+                          <h2>Total Pending Credits</h2>
+                          <p>{{currency.sum_credits_pending / 100 | currency}}</p>
+                        </div>
+                        <div class="icon">
+                          <i class="fa fa-money"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                     <div class="small-box bg-teal">
+                       <div class="inner">
+                         <h2>Total Pending Debits</h2>
+                         <p>{{currency.sum_debits_pending / 100 | currency}}</p>
+                       </div>
+                       <div class="icon">
+                         <i class="fa fa-money"></i>
+                       </div>
+                     </div>
+                   </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="small-box bg-navy">
+                        <div class="inner">
+                          <h2>24Hrs Pending Credits</h2>
+                          <p>{{currency.sum_24h_debits_pending / 100 | currency}}</p>
+                        </div>
+                        <div class="icon">
+                          <i class="fa fa-usd"></i>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="small-box bg-navy">
+                        <div class="inner">
+                          <h2>24Hrs Pending Debits</h2>
+                          <p>{{currency.sum_24h_credits_pending / 100 | currency}}</p>
+                        </div>
+                        <div class="icon">
+                          <i class="fa fa-money"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            <!-- Third Row -->
+        <div class="row">
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-grey">
                 <i class="fa fa-users">
                 </i>
               </span>
-
               <div class="info-box-content">
                 <span class="info-box-text">Total Users</span>
                 <span class="info-box-number">
@@ -113,10 +166,10 @@
               <span class="info-box-number">
                   {{Transa.count}}
               </span>
-                   
-            </div>                      
-          </div>                            
-        </div>        
+
+            </div>
+          </div>
+        </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
                 <span class="info-box-icon bg-yellow">
@@ -124,52 +177,28 @@
                   </i>
                 </span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Total Available Balance</span>
+                  <span class="info-box-text">24Hrs Count</span>
                   <span class="info-box-number">
-                    {{currency.available_balance_total / 100 | currency}}
+                    {{currency.count_24h}}
                   </span>
-                            <div class="btn-group" >                                            
-                              <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                More Info
-                              </button>                                
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                                <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                                <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                                <div class="dropdown-divider"></div>                                              
-                                <a class="dropdown-item" href="">Sign Out</a>
-                              </div>
-                            </div>
-                </div>                            
-              </div>                            
+                </div>
+              </div>
             </div>
               <div class="clearfix visible-sm-block"></div>
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-green">
+                <span class="info-box-icon bg-lime">
                   <i class="fa fa-money">
                   </i>
                 </span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Total Pending Deposits</span>
+                  <span class="info-box-text">Count Total</span>
                   <span class="info-box-number">
-                    {{currency.sum_debits_pending / 100 | currency}}
-                  </span> 
-                        <div class="btn-group" >                                            
-                          <button type="button" class="btn btn-primary dropdown-toggle fa fa-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            More Info
-                          </button>                                
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="">Deposito 1</a>    <br />                                              
-                            <a class="dropdown-item" href="">Deposito 2</a>    <br />
-                            <a class="dropdown-item" href="">Deposito 3</a>    <br />
-                            <div class="dropdown-divider"></div>                                              
-                            <a class="dropdown-item" href="">Sign Out</a>
-                          </div>
-                        </div>
-                </div>            
-              </div>             
-            </div> 
+                    {{currency.count_total}}
+                  </span>
+                </div>
+              </div>
+            </div>
 
     </div>
   </section>
@@ -177,4 +206,3 @@
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-  
