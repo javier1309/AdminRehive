@@ -1,0 +1,108 @@
+
+<div class="content-wrapper ">
+    <!-- <section class="containerr"> -->
+    <section class="content container-fluid">
+    
+    <h4>
+      <h1>Pay Roll</h1>
+        <div>
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-lime">
+                  <i class="fa fa-money">
+                  </i>
+                </span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Balance</span>
+                  <span class="info-box-number">
+                    {{Payrollcount.balance/100 |  currency}}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-lime">
+                  <i class="fa fa-money">
+                  </i>
+                </span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Balance Available</span>
+                  <span class="info-box-number">
+                    {{Payrollcount.available_balance/100 |  currency}}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-lime">
+                  <i class="fa fa-money">
+                  </i>
+                </span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Transactions Count</span>
+                  <span class="info-box-number">
+                    {{Payroll2.count}}
+                  </span>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+                              
+  
+          <h1>last 100 transactions</h1>
+  
+  
+                                      <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover tables">
+                                  
+                                      <ng-container *ngIf="Payroll?.length != 0">
+                                      <thead>
+                                          <tr>
+                                              <th>Usuario</th>
+                                              <th>Tipo</th>
+                                              <th>Subtipo</th>
+                                              <th>Tipo de moneda</th>
+                                              <th>Monto</th>
+                                              <th>Estado</th>
+                                              <th>Balance</th>
+                                              <th>Descripcion</th>
+  
+                                          </tr>
+                                      </thead>
+  
+                                      <tbody >
+                                          <ng-container *ngFor="let trans of Payroll ">
+                                          <tr>
+                                              <td>
+                                              <em *ngIf="trans.user" class="reset"> {{trans.user.email}} </em>
+                                              </td>
+                                              <td>{{trans.tx_type}}</td>
+                                              <td>{{trans.subtype}}</td>
+                                              <td >{{trans.currency.code}}  </td>
+                                              <td>{{trans.amount /100 |  currency}}</td>
+                                              <td>{{trans.status}}</td>
+                                              <td>{{trans.balance  /100 |  currency}}</td>
+                                              <td>{{trans.updated  | date  :'medium' }}</td>
+  
+                                          </tr>
+                                      </ng-container>
+  
+                                      </tbody>
+                                    </ng-container>
+                                      <tbody *ngIf="Payroll?.length == 0">
+                                          <tr>
+                                          <td colspan="5" class="Loading"></td>
+                                          <img src="../../../assets/images/loading.gif">
+                                          </tr>
+                                      <tbody>
+                                      </table>
+  
+        </div>
+      </h4>
+        </section>
+  
+    </div>
+  

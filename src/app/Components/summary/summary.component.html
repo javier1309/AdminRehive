@@ -69,17 +69,66 @@
        <div class="item">contenido #12</div> 
 </style> -->
 
-<div class="content-wrapper content-height">
+<div class="content-wrapper ">
   <!-- <section class="containerr"> -->
   <section class="content container-fluid">
   
   <h4>
+    <h1>Master Cage</h1>
       <div>
-                            <h1>Summary</h1>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-lime">
+                <i class="fa fa-money">
+                </i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Balance</span>
+                <span class="info-box-number">
+                  {{Masterc2.balance/100 |  currency}}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-lime">
+                <i class="fa fa-money">
+                </i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Balance Available</span>
+                <span class="info-box-number">
+                  {{Masterc2.available_balance/100 |  currency}}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-lime">
+                <i class="fa fa-money">
+                </i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Transactions Count</span>
+                <span class="info-box-number">
+                  {{Mastercount.count}}
+                </span>
+              </div>
+            </div>
+          </div>
 
-                                    <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover">
+        </div>
+                            
+
+        <h1>last 100 transactions</h1>
+
+
+                                    <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover tables">
                                 
-                                    <ng-container *ngIf="Transa?.length != 0">
+                                    <ng-container *ngIf="Masterc?.length != 0">
                                     <thead>
                                         <tr>
                                             <th>Usuario</th>
@@ -94,8 +143,8 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody>
-                                        <ng-container *ngFor="let trans of Transa ">
+                                    <tbody >
+                                        <ng-container *ngFor="let trans of Masterc ">
                                         <tr>
                                             <td>
                                             <em *ngIf="trans.user" class="reset"> {{trans.user.email}} </em>
@@ -113,9 +162,9 @@
 
                                     </tbody>
                                   </ng-container>
-                                    <tbody *ngIf="Transa?.length == 0">
+                                    <tbody *ngIf="Masterc?.length == 0">
                                         <tr>
-                                        <td colspan="5" class="no-data-available"></td>
+                                        <td colspan="5" class="Loading"></td>
                                         <img src="../../../assets/images/loading.gif">
                                         </tr>
                                     <tbody>

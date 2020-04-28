@@ -15,6 +15,8 @@ import {Routes, RouterModule} from '@angular/router';
 import { SummaryComponent } from './Components/summary/summary.component';
 import { Summary2Component } from './Components/summary2/summary2.component';
 import { AccountsComponent } from './Components/accounts/accounts.component';
+import { PayrollComponent } from './Components/summary/payroll/payroll.component';
+import { PayorderComponent } from './Components/summary/payorder/payorder.component';
 
 
 
@@ -25,7 +27,9 @@ const appRoutes: Routes = [
   {path:'transactions', component: TransactionsComponent},
   {path:'summary', component: SummaryComponent},
   {path:'summary2', component: Summary2Component},
-  {path:'accounts',component: AccountsComponent}
+  {path:'accounts',component: AccountsComponent},
+  {path:'payroll', component: PayrollComponent},
+  {path:'payorder', component: PayorderComponent},
 ];
 
 
@@ -41,7 +45,9 @@ const appRoutes: Routes = [
     TransactionsComponent,
     SummaryComponent,
     Summary2Component,
-    AccountsComponent
+    AccountsComponent,
+    PayrollComponent,
+    PayorderComponent
   ],
   imports: [
     BrowserModule,
