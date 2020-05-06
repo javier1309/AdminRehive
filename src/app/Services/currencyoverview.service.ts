@@ -3,7 +3,7 @@ import{HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import{Observable, of} from 'rxjs';
 
 
-const endpoint='https://api.rehive.com/3/admin/currencies/?code=CASH';
+const endpoint='https://api.rehive.com/3/admin/currencies/CASH/overview/';
 
 const httpOptions = {  // contruyendo el http options
   headers: new HttpHeaders({
@@ -19,12 +19,12 @@ const httpOptions = {  // contruyendo el http options
 @Injectable({
   providedIn: 'root'
 })
-export class CurrencyService {
+export class CurrencyOverviewService {
 
   constructor(private http: HttpClient) { }
 
 
-  getCurrency(): Observable<any> {
+  getCurrencyOverview(): Observable<any> {
 
 
     return this.http.get(endpoint,httpOptions);   //get para retornar valoress

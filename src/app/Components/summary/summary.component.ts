@@ -3,10 +3,11 @@ import{ TransactionsService } from '../../Services/transactions.service';
 import { Subject, from } from 'rxjs';
 import{MastercageService } from '../../Services/MainAccounts/mastercage.service';
 import{Mastercage2Service } from '../../Services/MainAccounts/mastercage2.service';
+
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html'
- 
+
 })
 export class SummaryComponent implements OnInit {
 
@@ -33,24 +34,24 @@ export class SummaryComponent implements OnInit {
       scrollCollapse: false,
       scrollY:"75vh",
       autoWidth:true,
-    
-     
+
+
     };
   }
-  
+
   getTransactions(){
     this.Transa=[];
     this.trans.getTransactions().subscribe((datos)=>{
 
       this.Transa=datos.data.results;
-      
+
     });
   }
   getMastercage(){
     this.Masterc=[];
     this.mastercage.getMastercage().subscribe((datos)=>{
       this.Masterc=datos.data.results;
-     
+
       this.dtTrigger.next();
   });}
   getMastercagecount(){
@@ -68,6 +69,6 @@ export class SummaryComponent implements OnInit {
       this.Masterc2=datos.data.results[0];
 
        });}
-  
+
 
 }
