@@ -1,175 +1,343 @@
 <div class="content-wrapper content-height">
   <section class="content container-fluid ">
 
-        <h1>CASH Summary</h1>
+        <h1>SUMMARY</h1>
+        <h2>CASH</h2>
 
-    <!-- Cash Row -->
+    <!-- CASH ROW -->
     <div class="row">
+      <!--Total Credits Income-->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="small-box bg-blue">
-                <div class="inner">
-                  <h2>Total Credits Income</h2>
-                  <p>{{currencyOverview.sum_credits_complete / 100 | currency}}</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-money"></i>
-                </div>
-                <a class="small-box-footer btn btn-primary fa fa-info"
-                data-toggle="collapse" data-target="#demo1" aria-haspopup="true" aria-expanded="false">
-                  More info <i class="fa fa-arrow-circle-right"></i>
-                </a>
+            <div class="inner">
+              <h2>Total Credits Income</h2>
+              <p>{{currencyOverview.sum_credits_complete / 100 | currency}}</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-money"></i>
+            </div>
+              <a class="small-box-footer btn btn-primary fa fa-info"
+              data-toggle="collapse" data-target="#demo1" aria-haspopup="true" aria-expanded="false">
+              More info <i class="fa fa-arrow-circle-right"></i>
+              </a>
+          </div>
                 <div id="demo1" class="collapse">
-                      <div class="container">
-                        <!-- First Row -->
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                             <div class="small-box bg-navy">
-                               <div class="inner">
-                                 <h2>Total Pending Credits</h2>
-                                 <p>{{currencyOverview.sum_credits_pending / 100 | currency}}</p>
-                               </div>
-                               <div class="icon">
-                                 <i class="fa fa-money"></i>
-                               </div>
-                             </div>
-                           </div>
-                           <div class="col-md-4 col-sm-6 col-xs-12">
-                             <div class="small-box bg-navy">
-                               <div class="inner">
-                                 <h2>24Hrs Pending Credits</h2>
-                                 <p>{{currencyOverview.sum_24h_debits_pending / 100 | currency}}</p>
-                               </div>
-                               <div class="icon">
-                                 <i class="fa fa-usd"></i>
-                                </div>
-                             </div>
-                           </div>
-                           <div class="col-md-4 col-sm-6 col-xs-12">
-                                  <div class="small-box bg-teal">
-                                    <div class="inner">
-                                      <h2>Total Pending Debits</h2>
-                                      <p>{{currencyOverview.sum_debits_pending / 100 | currency}}</p>
-                                    </div>
-                                    <div class="icon">
-                                      <i class="fa fa-money"></i>
-                                    </div>
-                                  </div>
-                             </div>
-                             <div class="col-md-4 col-sm-6 col-xs-12">
-                                   <div class="small-box bg-teal">
-                                     <div class="inner">
-                                       <h2>24Hrs Pending Debits</h2>
-                                       <p>{{currencyOverview.sum_24h_credits_pending / 100 | currency}}</p>
-                                     </div>
-                                     <div class="icon">
-                                       <i class="fa fa-money"></i>
-                                     </div>
-                                   </div>
-                               </div>
-                        </div>
-                        <!-- Second Row -->
-                      <div class="row">
+                  <div class="container">
+                  <!-- First Row -->
+                    <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                          <div class="info-box">
-                            <span class="info-box-icon bg-grey">
-                              <i class="fa fa-users">
-                              </i>
-                            </span>
-                            <div class="info-box-content">
-                              <span class="info-box-text">Total Users</span>
-                              <span class="info-box-number">
-                                  {{Usuarios.count}}
-                              </span>
+                            <div class="small-box bg-navy">
+                              <div class="inner">
+                                  <h2>Total Pending Credits</h2>
+                                  <p>{{currencyOverview.sum_credits_pending / 100 | currency}}</p>
+                              </div>
+                               <div class="icon">
+                                  <i class="fa fa-money"></i>
+                               </div>
                             </div>
-
-                          </div>
                         </div>
-                      <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                          <span class="info-box-icon bg-aqua">
-                            <i class="fa fa-money">
-                            </i>
-                          </span>
-                          <div class="info-box-content">
-                            <span class="info-box-text">Total Transactions</span>
-                            <span class="info-box-number">
-                                {{Transa.count}}
-                            </span>
-
-                          </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="small-box bg-navy">
+                              <div class="inner">
+                                  <h2>24Hrs Pending Credits</h2>
+                                  <p>{{currencyOverview.sum_24h_debits_pending / 100 | currency}}</p>
+                              </div>
+                              <div class="icon">
+                                  <i class="fa fa-usd"></i>
+                              </div>
+                            </div>
                         </div>
-                      </div>
-                          <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="small-box bg-teal">
+                              <div class="inner">
+                                  <h2>Total Pending Debits</h2>
+                                  <p>{{currencyOverview.sum_debits_pending / 100 | currency}}</p>
+                              </div>
+                              <div class="icon">
+                                  <i class="fa fa-money"></i>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="small-box bg-teal">
+                              <div class="inner">
+                                  <h2>24Hrs Pending Debits</h2>
+                                  <p>{{currencyOverview.sum_24h_credits_pending / 100 | currency}}</p>
+                              </div>
+                              <div class="icon">
+                                  <i class="fa fa-money"></i>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                              <span class="info-box-icon bg-grey">
+                                  <i class="fa fa-users">
+                                  </i>
+                              </span>
+                              <div class="info-box-content">
+                                  <span class="info-box-text">Total Users</span>
+                                  <span class="info-box-number">
+                                      {{Usuarios.count}}
+                                  </span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                              <span class="info-box-icon bg-aqua">
+                                  <i class="fa fa-money">
+                                  </i>
+                              </span>
+                              <div class="info-box-content">
+                                  <span class="info-box-text">Total Transactions</span>
+                                  <span class="info-box-number">
+                                      {{Transa.count}}
+                                  </span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="info-box">
                               <span class="info-box-icon bg-yellow">
-                                <i class="fa fa-usd">
-                                </i>
+                                  <i class="fa fa-usd">
+                                  </i>
                               </span>
                               <div class="info-box-content">
-                                <span class="info-box-text">24Hrs Count</span>
-                                <span class="info-box-number">
-                                  {{currencyOverview.count_24h}}
-                                </span>
+                                  <span class="info-box-text">24Hrs Count</span>
+                                  <span class="info-box-number">
+                                      {{currencyOverview.count_24h}}
+                                  </span>
                               </div>
                             </div>
-                          </div>
-                            <div class="clearfix visible-sm-block"></div>
-                          <div class="col-md-3 col-sm-6 col-xs-12">
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="info-box">
                               <span class="info-box-icon bg-lime">
-                                <i class="fa fa-money">
-                                </i>
+                                  <i class="fa fa-money">
+                                  </i>
                               </span>
                               <div class="info-box-content">
-                                <span class="info-box-text">Count Total</span>
-                                <span class="info-box-number">
-                                  {{currencyOverview.count_total}}
+                                  <span class="info-box-text">Count Total</span>
+                                  <span class="info-box-number">
+                                      {{currencyOverview.count_total}}
                                 </span>
                               </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
+                    </div>
+                  </div>
                 </div>
+        <!--Total Balance-->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h2>Total Balance</h2>
+              <p>{{currencyOverview.balance_total / 100 | currency}}</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-usd"></i>
+            </div>
           </div>
         </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h2>Total Balance</h2>
-                  <p>{{currencyOverview.balance_total / 100 | currency}}</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-usd"></i>
-                </div>
-
-              </div>
+        <!--Total Available Balance-->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="small-box bg-lime">
+            <div class="inner">
+              <h2>Total Available Balance</h2>
+              <p>{{currencyOverview.available_balance_total / 100 | currency}}</p>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="small-box bg-orange">
-                <div class="inner">
-                  <h2>Total Available Balance</h2>
-                  <p>{{currencyOverview.available_balance_total / 100 | currency}}</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-usd"></i>
-                 </div>
-              </div>
+            <div class="icon">
+              <i class="fa fa-usd"></i>
             </div>
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h2>Total Pending Debits</h2>
-                  <p>{{currencyOverview.sum_debits_complete / 100 | currency}}</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-money"></i>
-                </div>
-              </div>
-            </div>
-
           </div>
+        </div>
+        <!--Total Available Balance-->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h2>Total Pending Debits</h2>
+              <p>{{currencyOverview.sum_debits_complete / 100 | currency}}</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-money"></i>
+            </div>
+          </div>
+        </div>
+    </div>
+
+        <h2>SNGAME</h2>
+
+    <!-- SNGAME ROW -->
+    <div class="row">
+      <!--Total Credits Income-->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="small-box bg-blue">
+            <div class="inner">
+              <h2>Total Credits Income</h2>
+              <p>{{currencyOverview.sum_credits_complete / 100 | currency}}</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-money"></i>
+            </div>
+              <a class="small-box-footer btn btn-primary fa fa-info"
+              data-toggle="collapse" data-target="#demo2" aria-haspopup="true" aria-expanded="false">
+              More info <i class="fa fa-arrow-circle-right"></i>
+              </a>
+          </div>
+                <div id="demo2" class="collapse">
+                  <div class="container">
+                  <!-- First Row -->
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="small-box bg-navy">
+                              <div class="inner">
+                                  <h2>Total Pending Credits</h2>
+                                  <p>{{currencyOverview.sum_credits_pending / 100 | currency}}</p>
+                              </div>
+                               <div class="icon">
+                                  <i class="fa fa-money"></i>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="small-box bg-navy">
+                              <div class="inner">
+                                  <h2>24Hrs Pending Credits</h2>
+                                  <p>{{currencyOverview.sum_24h_debits_pending / 100 | currency}}</p>
+                              </div>
+                              <div class="icon">
+                                  <i class="fa fa-usd"></i>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="small-box bg-teal">
+                              <div class="inner">
+                                  <h2>Total Pending Debits</h2>
+                                  <p>{{currencyOverview.sum_debits_pending / 100 | currency}}</p>
+                              </div>
+                              <div class="icon">
+                                  <i class="fa fa-money"></i>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="small-box bg-teal">
+                              <div class="inner">
+                                  <h2>24Hrs Pending Debits</h2>
+                                  <p>{{currencyOverview.sum_24h_credits_pending / 100 | currency}}</p>
+                              </div>
+                              <div class="icon">
+                                  <i class="fa fa-money"></i>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                              <span class="info-box-icon bg-grey">
+                                  <i class="fa fa-users">
+                                  </i>
+                              </span>
+                              <div class="info-box-content">
+                                  <span class="info-box-text">Total Users</span>
+                                  <span class="info-box-number">
+                                      {{Usuarios.count}}
+                                  </span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                              <span class="info-box-icon bg-aqua">
+                                  <i class="fa fa-money">
+                                  </i>
+                              </span>
+                              <div class="info-box-content">
+                                  <span class="info-box-text">Total Transactions</span>
+                                  <span class="info-box-number">
+                                      {{Transa.count}}
+                                  </span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                              <span class="info-box-icon bg-yellow">
+                                  <i class="fa fa-usd">
+                                  </i>
+                              </span>
+                              <div class="info-box-content">
+                                  <span class="info-box-text">24Hrs Count</span>
+                                  <span class="info-box-number">
+                                      {{currencyOverview.count_24h}}
+                                  </span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                              <span class="info-box-icon bg-lime">
+                                  <i class="fa fa-money">
+                                  </i>
+                              </span>
+                              <div class="info-box-content">
+                                  <span class="info-box-text">Count Total</span>
+                                  <span class="info-box-number">
+                                      {{currencyOverview.count_total}}
+                                </span>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+        <!--Total Balance-->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h2>Total Balance</h2>
+              <p>{{currencyOverview.balance_total / 100 | currency}}</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-usd"></i>
+            </div>
+          </div>
+        </div>
+        <!--Total Available Balance-->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="small-box bg-lime">
+            <div class="inner">
+              <h2>Total Available Balance</h2>
+              <p>{{currencyOverview.available_balance_total / 100 | currency}}</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-usd"></i>
+            </div>
+          </div>
+        </div>
+        <!--Total Available Balance-->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h2>Total Pending Debits</h2>
+              <p>{{currencyOverview.sum_debits_complete / 100 | currency}}</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-money"></i>
+            </div>
+          </div>
+        </div>
+    </div>
+
   </section>
 </div>
   <!-- jQuery first, then Bootstrap JS. -->
