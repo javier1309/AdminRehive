@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
@@ -17,6 +19,7 @@ import { Summary2Component } from './Components/summary2/summary2.component';
 import { AccountsComponent } from './Components/accounts/accounts.component';
 import { PayrollComponent } from './Components/summary/payroll/payroll.component';
 import { PayorderComponent } from './Components/summary/payorder/payorder.component';
+import { DetailsComponent } from './Components/users/details/details.component';
 
 
 
@@ -30,6 +33,8 @@ const appRoutes: Routes = [
   {path:'accounts',component: AccountsComponent},
   {path:'payroll', component: PayrollComponent},
   {path:'payorder', component: PayorderComponent},
+  
+  {path:'test', component: ContentComponent},
 ];
 
 
@@ -47,13 +52,15 @@ const appRoutes: Routes = [
     Summary2Component,
     AccountsComponent,
     PayrollComponent,
-    PayorderComponent
+    PayorderComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     DataTablesModule,
-    RouterModule.forRoot(appRoutes)       //importando las mismas rutas
+    RouterModule.forRoot(appRoutes),      //importando las mismas rutas
+     NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

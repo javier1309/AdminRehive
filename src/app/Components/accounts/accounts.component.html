@@ -46,7 +46,8 @@
             <tbody>
               <tr *ngFor="let cuenta of Cuentas; let i=index" >
                 
-                  <td>{{cuenta.reference | uppercase}}</td>
+                 <!--Evento Onclick-->
+                  <td  >{{cuenta.reference | uppercase}}</td>
                   <td>  <em *ngIf="cuenta.user " class="reset">{{cuenta.user.username}}</em>   </td>
              
                   <td>  <em *ngIf="cuenta.user " class="reset">{{cuenta.user.email}}</em>   </td>

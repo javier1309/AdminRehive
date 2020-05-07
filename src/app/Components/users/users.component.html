@@ -10,21 +10,43 @@
     </section>-->
   
     <!-- Main content -->
+
+
     <section class="content container-fluid">
   
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
+    
+        <h1>Angular 8 Bootstrap Modal Popup Example</h1>
+   
+        <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
+           
+      
+        <ng-template #mymodal let-modal class="modalstyle">
+          Modal abierto
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            This is example from ItSolutionStuff.com
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+          </div>
+        </ng-template>
 
 
         <h1> Usuarios: </h1>
-        <h4>
+        <!-- <h4>
           <div>
-           <!--<div class ="loading" *ngif="loading">
-      <img src="../../../assets/images/loading.gif">-->
-          <!--<table class="table table-hover table-fixed">-->
+ 
             <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" >
-            <!--Table head-->
+         
             <ng-container *ngIf="Usuarios?.length != 0">
             <thead>
 
@@ -38,12 +60,11 @@
                     <th>Ultimo ingreso</th>
                 </tr>
             </thead>
-            <!--Table head-->
-            <!--Table body-->
+         
             <tbody>
               <tr *ngFor="let usuario of Usuarios" >
-                  <td>{{usuario.email}}</td>
-                  <td>{{usuario.username | uppercase}}</td>
+                  <td (click)=funcionclick(usuario.account)>{{usuario.email}}</td>
+                  <td (click)=funcionclick(usuario.account)>{{usuario.username | uppercase}}</td>
                   <td>{{usuario.first_name}}</td>
                   <td>{{usuario.last_name}}</td>
                   <td>{{usuario.account}}</td>
@@ -60,10 +81,10 @@
               </tr>
             </tbody>
   
-            <!--Table bodyy-->
+           
           </table>
         </div>
-      </h4>
+      </h4> -->
   
 
     </section>
