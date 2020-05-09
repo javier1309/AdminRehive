@@ -1,48 +1,8 @@
-<!-- Content Wrapper. Contains page content -->
+
 <div class="content-wrapper content-height">
-    <!-- Content Header (Page header) -->
-    <!--<section class="content-header">
-        <small></small>
-      <ol cla ss="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>-->
-  
-    <!-- Main content -->
-
-
     <section class="content container-fluid">
-  
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-    
-        <h1>Angular 8 Bootstrap Modal Popup Example</h1>
-   
-        <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
-           
-      
-        <ng-template #mymodal let-modal class="modalstyle">
-          Modal abierto
-          <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
-    
-            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            This is example from ItSolutionStuff.com
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-          </div>
-        </ng-template>
-
-
-        <h1> Usuarios: </h1>
-        <!-- <h4>
+          <h1> Usuarios: </h1>
+       <h4>
           <div>
  
             <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" >
@@ -59,11 +19,13 @@
                     <th>Balance $</th>
                     <th>Ultimo ingreso</th>
                 </tr>
-            </thead>
-         
+            </thead>         
             <tbody>
               <tr *ngFor="let usuario of Usuarios" >
-                  <td (click)=funcionclick(usuario.account)>{{usuario.email}}</td>
+                  
+                  <td (click)=funcionclick(usuario.account) data-target="#exampleModal" data-toggle="modal" data-whatever="@getbootstrap">{{usuario.email}} 
+                  
+                  </td>
                   <td (click)=funcionclick(usuario.account)>{{usuario.username | uppercase}}</td>
                   <td>{{usuario.first_name}}</td>
                   <td>{{usuario.last_name}}</td>
@@ -84,10 +46,54 @@
            
           </table>
         </div>
-      </h4> -->
+      </h4> 
+
+   
+<!-- MODAL -->
+      
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Modal</button> -->
   
+  <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!--  -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Usuario</h4>
+        </div>
+        <!--  -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+        El balance es: 
+        {{AccountEndpoint.balance}}
+              
+            </div>
+          </form>
+        </div>
+        <!--  -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
 
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+
+
+
+
+  <script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  //var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  //var modal = $(this)
+  //modal.find('.modal-title').text('New message to ' + recipient)
+  // modal.find('.modal-body input').val(recipient)
+})
+  </script>

@@ -4,7 +4,7 @@ import { Subject,interval,timer } from 'rxjs';
 import {TestService} from '../../Services/MainAccounts/test.service';
 //import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+// import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-users',
@@ -15,8 +15,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class UsersComponent implements OnInit {
   title = 'appBootstrap';
   
-  closeResult: string;
-  
+
 
 
   public loading: boolean;
@@ -30,29 +29,13 @@ export class UsersComponent implements OnInit {
 
   constructor(public Users: UsersService,
     private test:TestService,
-    private modalService: NgbModal
+    // private modalService: NgbModal
     
 
     ) {
       this.loading=true;
    }
-   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
+
 
 
   ngOnInit(){
@@ -82,11 +65,20 @@ if (this.CodeAccountHtml){
    this.test.getAccount(this.CodeAccountHtml).subscribe((datos)=>{
       this.AccountEndpoint=datos.data.results;
       console.log(this.AccountEndpoint);
+      return this.AccountEndpoint;
+
+      
+
       })
       this.test.getTransactions(this.CodeAccountHtml).subscribe((datos)=>{
         this.TransactionEndpoint=datos.data;
-        console.log(this.TransactionEndpoint);})
-        return 
+        console.log(this.TransactionEndpoint);
+
+      
+      
+      })
+      
+
   }
   else 
   alert("El usuario no tiene cuenta registrada")
