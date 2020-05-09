@@ -62,13 +62,12 @@ funcionclick(usuario){
    
   this.CodeAccountHtml=usuario;  //recuperando la cuenta de usuario seleccionado
 if (this.CodeAccountHtml){
+  //this.AccountEndpoint=null;
    this.test.getAccount(this.CodeAccountHtml).subscribe((datos)=>{
-      this.AccountEndpoint=datos.data.results;
+      this.AccountEndpoint=datos.data;
       console.log(this.AccountEndpoint);
-      return this.AccountEndpoint;
-
       
-
+   
       })
       this.test.getTransactions(this.CodeAccountHtml).subscribe((datos)=>{
         this.TransactionEndpoint=datos.data;

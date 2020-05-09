@@ -1,7 +1,7 @@
 
 <div class="content-wrapper content-height">
     <section class="content container-fluid">
-          <h1> Usuarios: </h1>
+          <h1> Users: </h1>
        <h4>
           <div>
  
@@ -23,10 +23,30 @@
             <tbody>
               <tr *ngFor="let usuario of Usuarios" >
                   
-                  <td (click)=funcionclick(usuario.account) data-target="#exampleModal" data-toggle="modal" data-whatever="@getbootstrap">{{usuario.email}} 
+                  <td >
+                   
+                  
+                      {{usuario.email}} <br />
+                      <em *ngIf ="usuario.account">
+                        <h6 (click)=funcionclick(usuario.account) data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                          More Info...
+                        </h6>
+                      </em>
+                 
+                
+
+                  </td>
+
+
+                  <td>
+                    {{usuario.username | uppercase}}
+                  
+                  
+                  
+                  
+                  
                   
                   </td>
-                  <td (click)=funcionclick(usuario.account)>{{usuario.username | uppercase}}</td>
                   <td>{{usuario.first_name}}</td>
                   <td>{{usuario.last_name}}</td>
                   <td>{{usuario.account}}</td>
@@ -59,15 +79,72 @@
         <!--  -->
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="exampleModalLabel">Usuario</h4>
+          <h4 class="modal-title" id="exampleModalLabel">User Details </h4>
         </div>
         <!--  -->
         <div class="modal-body">
           <form>
             <div class="form-group">
-        El balance es: 
-        {{AccountEndpoint.balance}}
-              
+       
+              <!-- Balance de la cuenta de usuario Modal -->
+        <div *ngIf="AccountEndpoint"> 
+          <div *ngFor=" let a of AccountEndpoint.results" > 
+           Balance: {{a.currency.code}}  {{a.balance/100 | currency}}  &nbsp; &nbsp; &nbsp;  Available Balance: {{a.currency.code}} {{a.available_balance/100 |currency}} <br />
+                   
+           </div> 
+          </div> 
+
+                  <!-- Transacciones Modal -->
+                  <h4>Total Transactions: {{TransactionEndpoint.count}}</h4>
+                  <h6>last 10 transactions</h6>
+                  <h6>
+                  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" class="display">
+                
+                    <ng-container *ngIf="TransactionEndpoint?.length != 0">
+                    <thead>
+  
+                        <tr>
+                            <th>Type</th>
+                            <th>Sub Type</th>
+                            <th>Currency</th>
+                            <th>Amount</th>
+                            
+                            <th>Balance</th>
+                            <th>Estatus</th>
+                            <th>Date</th>>
+                            
+                           
+                           
+                        </tr>
+                    </thead>
+            
+                    <tbody >
+                      <ng-container *ngFor="let trans of TransactionEndpoint.results ">
+                      <tr>
+                        <td>{{trans.tx_type}}</td>
+                        <td>{{trans.subtype}}</td>
+                        <td >
+                          <em *ngIf="trans.currency" class="reset"> {{trans.currency.code}} </em>
+                        </td>
+                   
+                          <td>{{trans.amount/100 | currency}}</td>
+                         
+                          <td>{{trans.balance /100 | currency}}</td>
+                         
+                          <td>{{trans.status}}</td>
+                          <td>{{trans.created |date  :'short' }}</td>
+                       
+                      </tr>
+                    </ng-container>
+            
+                    </tbody>
+                    </ng-container>
+                            
+                  </table> </h6>
+        
+
+
+
             </div>
           </form>
         </div>
