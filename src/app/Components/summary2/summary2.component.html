@@ -2,6 +2,66 @@
   <section class="content container-fluid ">
 
         <h1>SUMMARY</h1>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-grey">
+                      <i class="fa fa-users">
+                      </i>
+                  </span>
+                  <div class="info-box-content">
+                      <span class="info-box-text">Total Users</span>
+                      <span class="info-box-number">
+                          {{Usuarios.count}}
+                      </span>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-aqua">
+                      <i class="fa fa-money">
+                      </i>
+                  </span>
+                  <div class="info-box-content">
+                      <span class="info-box-text">Total Transactions</span>
+                      <span class="info-box-number">
+                          {{Transa.count}}
+                      </span>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-yellow">
+                      <i class="fa fa-usd">
+                      </i>
+                  </span>
+                  <div class="info-box-content">
+                      <span class="info-box-text">24Hrs Count</span>
+                      <span class="info-box-number">
+                          {{currencyOverview.count_24h}}
+                      </span>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-lime">
+                      <i class="fa fa-money">
+                      </i>
+                  </span>
+                  <div class="info-box-content">
+                      <span class="info-box-text">Count Total</span>
+                      <span class="info-box-number">
+                          {{currencyOverview.count_total}}
+                    </span>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
         <h2>CASH</h2>
 
     <!-- CASH ROW -->
@@ -10,7 +70,7 @@
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="small-box bg-blue">
             <div class="inner">
-              <h2>Total Credits Income</h2>
+              <h2>Total Credits</h2>
               <p>{{currencyOverview.sum_credits_complete / 100 | currency}}</p>
             </div>
             <div class="icon">
@@ -71,64 +131,6 @@
                         </div>
                     </div>
                     <!-- Second Row -->
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box">
-                              <span class="info-box-icon bg-grey">
-                                  <i class="fa fa-users">
-                                  </i>
-                              </span>
-                              <div class="info-box-content">
-                                  <span class="info-box-text">Total Users</span>
-                                  <span class="info-box-number">
-                                      {{Usuarios.count}}
-                                  </span>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box">
-                              <span class="info-box-icon bg-aqua">
-                                  <i class="fa fa-money">
-                                  </i>
-                              </span>
-                              <div class="info-box-content">
-                                  <span class="info-box-text">Total Transactions</span>
-                                  <span class="info-box-number">
-                                      {{Transa.count}}
-                                  </span>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box">
-                              <span class="info-box-icon bg-yellow">
-                                  <i class="fa fa-usd">
-                                  </i>
-                              </span>
-                              <div class="info-box-content">
-                                  <span class="info-box-text">24Hrs Count</span>
-                                  <span class="info-box-number">
-                                      {{currencyOverview.count_24h}}
-                                  </span>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box">
-                              <span class="info-box-icon bg-lime">
-                                  <i class="fa fa-money">
-                                  </i>
-                              </span>
-                              <div class="info-box-content">
-                                  <span class="info-box-text">Count Total</span>
-                                  <span class="info-box-number">
-                                      {{currencyOverview.count_total}}
-                                </span>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
                   </div>
                 </div>
         <!--Total Balance-->
