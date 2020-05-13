@@ -4,6 +4,7 @@ import{Observable, of} from 'rxjs';
 
 
 const endpoint='https://api.rehive.com/3/admin/transactions/?page_size=252';
+const endpoint2='https://api.rehive.com/3/admin/transactions/?created__gt=1588291200000&created__lt=1589396125000';
 
 const httpOptions = {  // contruyendo el http options
   headers: new HttpHeaders({
@@ -26,5 +27,12 @@ export class TransactionsService {
 
 
     return this.http.get(endpoint,httpOptions);   //get para retornar valores
+  }
+
+
+
+  getDateTransactions(): Observable<any> {
+    return this.http.get(endpoint2,httpOptions);   //get para retornar valores
+ 
   }
 }

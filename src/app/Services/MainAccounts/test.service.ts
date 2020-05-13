@@ -29,4 +29,10 @@ export class TestService {
     return this.http.get(`https://api.rehive.com/3/admin/transactions/?account=${CodeAccountHtml}&page_size=10`,httpOptions);   //get para retornar valores
  
   }
+  getUser(CodeAccountHtml): Observable<any> {
+    return this.http.get(`https://api.rehive.com/3/admin/users/?account=${CodeAccountHtml}`,httpOptions);   //get para retornar valores
+ 
+  }
+  
+  
 }

@@ -24,6 +24,7 @@ export class UsersComponent implements OnInit {
   CodeAccountHtml:any=[];
   AccountEndpoint:any=[];
   TransactionEndpoint:any=[];
+  UserEndPoint:any=[];
 
   dtTrigger: Subject<any> = new Subject<any>();
 
@@ -53,7 +54,9 @@ export class UsersComponent implements OnInit {
         pageLength: 15,  
         paging:true,
         scrollCollapse: false,
-        scrollY:"75vh", }
+        scrollY:"75vh", 
+       
+      }
 }
 
 
@@ -65,13 +68,22 @@ if (this.CodeAccountHtml){
   //this.AccountEndpoint=null;
    this.test.getAccount(this.CodeAccountHtml).subscribe((datos)=>{
       this.AccountEndpoint=datos.data;
-      console.log(this.AccountEndpoint);
+      // console.log(this.AccountEndpoint);
       
    
       })
       this.test.getTransactions(this.CodeAccountHtml).subscribe((datos)=>{
         this.TransactionEndpoint=datos.data;
-        console.log(this.TransactionEndpoint);
+        // console.log(this.TransactionEndpoint);
+
+
+      
+      
+      })
+      this.test.getUser(this.CodeAccountHtml).subscribe((datos)=>{
+        this.UserEndPoint=datos.data.results[0];
+        // console.log(this.UserEndPoint);
+
 
       
       

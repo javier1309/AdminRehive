@@ -47,7 +47,7 @@ public isMenuCollapsed = true;
     this.curr.getCurrency().subscribe((datos)=>{
 
       this.currency=datos.data.results;
-    //  console.log(datos);
+    console.log(datos);
     });
   }
 

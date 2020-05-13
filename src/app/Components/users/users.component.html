@@ -1,6 +1,7 @@
 
 <div class="content-wrapper content-height">
     <section class="content container-fluid">
+      <body class="skin-blue fixed sidebar-mini sidebar-mini-expand-feature" style="height: auto; min-height: 100%;">
           <h1> Users: </h1>
        <h4>
           <div>
@@ -23,29 +24,16 @@
             <tbody>
               <tr *ngFor="let usuario of Usuarios" >
                   
-                  <td >
-                   
-                  
+                  <td >                                   
                       {{usuario.email}} <br />
                       <em *ngIf ="usuario.account">
                         <h6 (click)=funcionclick(usuario.account) data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
                           More Info...
                         </h6>
                       </em>
-                 
-                
-
                   </td>
-
-
                   <td>
                     {{usuario.username | uppercase}}
-                  
-                  
-                  
-                  
-                  
-                  
                   </td>
                   <td>{{usuario.first_name}}</td>
                   <td>{{usuario.last_name}}</td>
@@ -79,7 +67,20 @@
         <!--  -->
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="exampleModalLabel">User Details </h4>
+          <h4 class="modal-title" id="exampleModalLabel">User Details <br />
+            <h4 >
+           Email: {{  UserEndPoint.email}}<br/>
+           Name: {{  UserEndPoint.first_name}} &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  Last Name: {{  UserEndPoint.last_name}}<br/>
+          
+           Phone: {{  UserEndPoint.mobile}}<br/>
+           Account:  {{  UserEndPoint.account}}&nbsp; &nbsp; &nbsp; Last Login: {{UserEndPoint.last_login|date:'medium'}} <br/>
+           Groups: 
+        <ng-container *ngFor="let groups of UserEndPoint.groups">
+          {{groups.name}}
+        </ng-container>
+              </h4>
+          
+          </h4>
         </div>
         <!--  -->
         <div class="modal-body">
@@ -93,14 +94,13 @@
                    
            </div> 
           </div> 
-
-                  <!-- Transacciones Modal -->
+          <!-- Transacciones Modal -->
                   <h4>Total Transactions: {{TransactionEndpoint.count}}</h4>
                   <h6>last 10 transactions</h6>
                   <h6>
-                  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" class="display">
+                  <table datatable>
                 
-                    <ng-container *ngIf="TransactionEndpoint?.length != 0">
+                
                     <thead>
   
                         <tr>
@@ -112,12 +112,8 @@
                             <th>Balance</th>
                             <th>Estatus</th>
                             <th>Date</th>>
-                            
-                           
-                           
                         </tr>
-                    </thead>
-            
+                    </thead>            
                     <tbody >
                       <ng-container *ngFor="let trans of TransactionEndpoint.results ">
                       <tr>
@@ -125,27 +121,17 @@
                         <td>{{trans.subtype}}</td>
                         <td >
                           <em *ngIf="trans.currency" class="reset"> {{trans.currency.code}} </em>
-                        </td>
-                   
-                          <td>{{trans.amount/100 | currency}}</td>
-                         
-                          <td>{{trans.balance /100 | currency}}</td>
-                         
+                        </td>                   
+                          <td>{{trans.amount/100 | currency}}</td>                         
+                          <td>{{trans.balance /100 | currency}}</td>                         
                           <td>{{trans.status}}</td>
-                          <td>{{trans.created |date  :'short' }}</td>
-                       
+                          <td>{{trans.created |date  :'short' }}</td>                       
                       </tr>
                     </ng-container>
             
-                    </tbody>
-                    </ng-container>
-                            
+                    </tbody>                                         
                   </table> </h6>
-        
-
-
-
-            </div>
+        </div>
           </form>
         </div>
         <!--  -->
@@ -157,9 +143,10 @@
     </div>
   </div>
 
+</body>
+
     </section>
   </div>
-
 
 
 

@@ -11,13 +11,14 @@ export class TransactionsComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
   Transa:any=[];
+  dateT:any=[];
   dtTrigger: Subject<any> = new Subject<any>();
 
   constructor(public  trans:TransactionsService) { }
 
   ngOnInit(){
     this.getTransactions();
-
+    this.getDateTransaction();
 
 
     this.dtOptions = {
@@ -40,5 +41,16 @@ export class TransactionsComponent implements OnInit {
       this.dtTrigger.next();
     });
   }
+
+
+  getDateTransaction(){
+    this.dateT=[];
+    this.trans.getDateTransactions().subscribe((datos)=>{
+
+      this.dateT=datos;
+     console.log(this.dateT);
+    });
+  }
+
 
 }
