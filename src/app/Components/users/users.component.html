@@ -1,186 +1,163 @@
 
 <div class="content-wrapper content-height">
-    <section class="content container-fluid">
-      <body class="skin-blue fixed sidebar-mini sidebar-mini-expand-feature" style="height: auto; min-height: 100%;">
-          <h1> Users: </h1>
-       <h4>
-          <div>
+  <section class="content container-fluid">
+    <body class="skin-blue fixed sidebar-mini sidebar-mini-expand-feature" style="height: auto; min-height: 100%;">
+        <h1> Users: </h1>
+     <h4>
+        <div>
 
-            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" >
+          <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" >
+       
+          <ng-container *ngIf="Usuarios?.length != 0">
+          <thead>
 
-            <ng-container *ngIf="Usuarios?.length != 0">
-            <thead>
-
-                <tr>
-                    <th>Email</th>
-                    <th>Username</th>
-                    <th>Name</th>
-                    <th>Last_Name</th>
-                    <th>Cuenta</th>
-                    <th>Balance $</th>
-                    <th>Ultimo ingreso</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let usuario of Usuarios" >
-
-                  <td >
-
-
-                      {{usuario.email}} <br />
-                      <em *ngIf ="usuario.account">
-                        <h6 (click)=funcionclick(usuario.account) data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
-                          More Info...
-                        </h6>
-                      </em>
-
-                  </td>
-                  <td>
-                    {{usuario.username | uppercase}}
-
-
-
-
-
-
-                  </td>
-                  <td>{{usuario.first_name}}</td>
-                  <td>{{usuario.last_name}}</td>
-                  <td>{{usuario.account}}</td>
-                  <td>{{usuario.balance/100 | currency}}</td>
-
-                  <td>{{usuario.last_login  | date  :'medium'}}</td>
-              </tr>
-            </tbody>
-            </ng-container>
-            <tbody *ngIf="Usuarios?.length == 0">
               <tr>
-                <td colspan="10" class="no-data-available"></td>
-                <img src="../../../assets/images/loading.gif">
+                  <th>Email</th>
+                  <th>Username</th>
+                  <th>Name</th>
+                  <th>Last_Name</th>
+                  <th>Cuenta</th>
+                  <th>Balance $</th>
+                  <th>Ultimo ingreso</th>
               </tr>
-            </tbody>
+          </thead>         
+          <tbody>
+            <tr *ngFor="let usuario of Usuarios" >
+                
+                <td >                                   
+                    {{usuario.email}} <br />
+                    <em *ngIf ="usuario.account">
+                      <h6 (click)=funcionclick(usuario.account) data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                        More Info...
+                      </h6>
+                    </em>
+                </td>
+                <td>
+                  {{usuario.username | uppercase}}
+                </td>
+                <td>{{usuario.first_name}}</td>
+                <td>{{usuario.last_name}}</td>
+                <td>{{usuario.account}}</td>
+                <td>{{usuario.balance/100 | currency}}</td>
+               
+                <td>{{usuario.last_login  | date  :'medium'}}</td>
+            </tr>
+          </tbody>
+          </ng-container>
+          <tbody *ngIf="Usuarios?.length == 0">
+            <tr>
+              <td colspan="10" class="no-data-available"></td>
+              <img src="../../../assets/images/loading.gif">
+            </tr>
+          </tbody>
 
+         
+        </table>
+      </div>
+    </h4> 
 
-          </table>
-        </div>
-      </h4>
-
-
+ 
 <!-- MODAL -->
+    
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Modal</button> -->
 
-  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Modal</button> -->
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--  -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">User Details <br />
+          <h4 >
+         Email: {{  UserEndPoint.email}}<br/>
+         Name: {{  UserEndPoint.first_name}} &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  Last Name: {{  UserEndPoint.last_name}}<br/>
+        
+         Phone: {{  UserEndPoint.mobile}}<br/>
+         Account:  {{  UserEndPoint.account}}&nbsp; &nbsp; &nbsp; Last Login: {{UserEndPoint.last_login|date:'medium'}} <br/>
+         Groups: 
+      <ng-container *ngFor="let groups of UserEndPoint.groups">
+        {{groups.name}}
+      </ng-container>
+            </h4>
+        
+        </h4>
+      </div>
+      <!--  -->
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+     
+            <!-- Balance de la cuenta de usuario Modal -->
+      <div *ngIf="AccountEndpoint"> 
+        <div *ngFor=" let a of AccountEndpoint.results" > 
+         Balance: {{a.currency.code}}  {{a.balance/100 | currency}}  &nbsp; &nbsp; &nbsp;  Available Balance: {{a.currency.code}} {{a.available_balance/100 |currency}} <br />
+                 
+         </div> 
+        </div> 
+        <!-- Transacciones Modal -->
+                <h4>Total Transactions: {{TransactionEndpoint.count}}</h4>
+                <h6>last 10 transactions</h6>
+                <h6>
+                <table datatable>
+              
+              
+                  <thead>
 
-  <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <!--  -->
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="exampleModalLabel">User Details <br />
-            <h4 >
-           Email: {{  UserEndPoint.email}}<br/>
-           Name: {{  UserEndPoint.first_name}} &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  Last Name: {{  UserEndPoint.last_name}}<br/>
-          
-           Phone: {{  UserEndPoint.mobile}}<br/>
-           Account:  {{  UserEndPoint.account}}&nbsp; &nbsp; &nbsp; Last Login: {{UserEndPoint.last_login|date:'medium'}} <br/>
-           Groups: 
-        <ng-container *ngFor="let groups of UserEndPoint.groups">
-          {{groups.name}}
-        </ng-container>
-              </h4>
-          
-          </h4>
-        </div>
-        <!--  -->
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-
-              <!-- Balance de la cuenta de usuario Modal -->
-        <div *ngIf="AccountEndpoint">
-          <div *ngFor=" let a of AccountEndpoint.results" >
-           Balance: {{a.currency.code}}  {{a.balance/100 | currency}}  &nbsp; &nbsp; &nbsp;
-           Available Balance: {{a.currency.code}} {{a.available_balance/100 |currency}} <br />
-
-           </div>
-          </div>
-
-                  <!-- Transacciones Modal -->
-                  <h4>Total Transactions: {{TransactionEndpoint.count}}</h4>
-                  <h6>last 10 transactions</h6>
-                  <h6>
-                  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" class="display">
-
-                    <ng-container *ngIf="TransactionEndpoint?.length != 0">
-                    <thead>
-
-                        <tr>
-                            <th>Type</th>
-                            <th>Sub Type</th>
-                            <th>Currency</th>
-                            <th>Amount</th>
-
-                            <th>Balance</th>
-                            <th>Estatus</th>
-                            <th>Date</th>>
-
-                        </tr>
-                    </thead>
-
-                    <tbody >
-                      <ng-container *ngFor="let trans of TransactionEndpoint.results ">
                       <tr>
-                        <td>{{trans.tx_type}}</td>
-                        <td>{{trans.subtype}}</td>
-                        <td >
-                          <em *ngIf="trans.currency" class="reset"> {{trans.currency.code}} </em>
-                        </td>
-
-                          <td>{{trans.amount/100 | currency}}</td>
-
-                          <td>{{trans.balance /100 | currency}}</td>
-
-                          <td>{{trans.status}}</td>
-                          <td>{{trans.created |date  :'short' }}</td>
-
+                          <th>Type</th>
+                          <th>Sub Type</th>
+                          <th>Currency</th>
+                          <th>Amount</th>
+                          
+                          <th>Balance</th>
+                          <th>Estatus</th>
+                          <th>Date</th>>
                       </tr>
-                    </ng-container>
-
-                    </tbody>
-                    </ng-container>
-
-                  </table> </h6>
-
-
-
-
-            </div>
-          </form>
-        </div>
-        <!--  -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-        </div>
+                  </thead>            
+                  <tbody >
+                    <ng-container *ngFor="let trans of TransactionEndpoint.results ">
+                    <tr>
+                      <td>{{trans.tx_type}}</td>
+                      <td>{{trans.subtype}}</td>
+                      <td >
+                        <em *ngIf="trans.currency" class="reset"> {{trans.currency.code}} </em>
+                      </td>                   
+                        <td>{{trans.amount/100 | currency}}</td>                         
+                        <td>{{trans.balance /100 | currency}}</td>                         
+                        <td>{{trans.status}}</td>
+                        <td>{{trans.created |date  :'short' }}</td>                       
+                    </tr>
+                  </ng-container>
+          
+                  </tbody>                                         
+                </table> </h6>
+      </div>
+        </form>
+      </div>
+      <!--  -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
       </div>
     </div>
   </div>
+</div>
 
 </body>
 
-    </section>
-  </div>
+  </section>
+</div>
 
 
 
-  <script>
-    $('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  //var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  //var modal = $(this)
-  //modal.find('.modal-title').text('New message to ' + recipient)
-  // modal.find('.modal-body input').val(recipient)
+<script>
+  $('#exampleModal').on('show.bs.modal', function (event) {
+var button = $(event.relatedTarget) // Button that triggered the modal
+//var recipient = button.data('whatever') // Extract info from data-* attributes
+// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+//var modal = $(this)
+//modal.find('.modal-title').text('New message to ' + recipient)
+// modal.find('.modal-body input').val(recipient)
 })
-  </script>
+</script>

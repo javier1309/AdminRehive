@@ -54,7 +54,8 @@ export class UsersComponent implements OnInit {
         pageLength: 15,  
         paging:true,
         scrollCollapse: false,
-        scrollY:"75vh", 
+        scrollY:"75vh"
+       
        
       }
 }
@@ -75,7 +76,7 @@ if (this.CodeAccountHtml){
       this.test.getTransactions(this.CodeAccountHtml).subscribe((datos)=>{
         this.TransactionEndpoint=datos.data;
         // console.log(this.TransactionEndpoint);
-
+      
 
       
       
@@ -115,9 +116,7 @@ getUsuarios(){
                                            //que exista un cambio
    //   this.dtTrigger.next();
   //  });
-   
+   //test
   
   }
-
-
 
