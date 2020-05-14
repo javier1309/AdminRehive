@@ -8,16 +8,38 @@
         <li class="active">Here</li>
       </ol>
     </section>-->
-  
+
     <!-- Main content -->
-    
-    <section class="content container-fluid">
+
+  <section class="content container-fluid">
       <div>
         <h4>
               <!--------------------------
-                | Your Page Content Here |  
+                | Your Page Content Here |
                 -------------------------->
                 <h1>Transacciones</h1>
+
+                  <p>Example of the range selection</p>
+
+                  <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+                  </ngb-datepicker>
+
+                  <ng-template #t let-date let-focused="focused">
+                    <span class="custom-day"
+                          [class.focused]="focused"
+                          [class.range]="isRange(date)"
+                          [class.faded]="isHovered(date) || isInside(date)"
+                          (mouseenter)="hoveredDate = date"
+                          (mouseleave)="hoveredDate = null">
+                      {{ date.day }}
+                    </span>
+                  </ng-template>
+
+                  <hr>
+
+                  <pre>From: {{ fromDate | json }} </pre>
+                  <pre>To: {{ toDate | json }} </pre>
+
                 <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
                   <!--Table head-->
                   <ng-container *ngIf="Transa?.length != 0">
@@ -30,10 +52,10 @@
                           <th>Nombre</th>
                           <th>Estado</th>
                           <th>Cuenta</th>
-                         
+
                       </tr>
                   </thead>
-          
+
                   <tbody >
                     <ng-container *ngFor="let trans of Transa ">
                     <tr>
@@ -45,31 +67,31 @@
                         </td>
                         <td>{{trans.status}}</td>
                         <td>{{trans.account}}</td>
-                 
+
                     </tr>
                   </ng-container>
-          
+
                   </tbody>
                   </ng-container>
                   <tbody *ngIf="Transa?.length == 0">
                     <tr>
                       <p>
-                     
+
                       <td colspan="5" class="no-data-available"></td>
 
                       <img src="../../../assets/images/loading.gif">
                       </p>
                     </tr>
-                  <tbody>
-          
-                </table>
-            </h4>
-      </div>
-    
-  
- 
+                  </tbody>
 
-    </section>
+                </table>
+        </h4>
+      </div>
+
+
+
+
+  </section>
     <!-- /.content -->
-  </div>
+</div>
   <!-- /.content-wrapper -->

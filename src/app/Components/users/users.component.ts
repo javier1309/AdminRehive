@@ -8,14 +8,12 @@ import {TestService} from '../../Services/MainAccounts/test.service';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-
-  })
+  templateUrl: './users.component.html'
+})
 
 export class UsersComponent implements OnInit {
-  title = 'appBootstrap';
-  
 
+  title = 'appBootstrap';
 
 
   public loading: boolean;
@@ -29,18 +27,16 @@ export class UsersComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject<any>();
 
   constructor(public Users: UsersService,
-    private test:TestService,
+    private test:TestService
     // private modalService: NgbModal
-    
-
     ) {
       this.loading=true;
-   }
+    }
 
 
 
   ngOnInit(){
-    
+
         this.getUsuarios();
         if(!this.getUsuarios){
           alert('no se puede recuperar informacion de Rehive')
@@ -51,51 +47,51 @@ export class UsersComponent implements OnInit {
         this.dtOptions = {
         responsive: true,
         pagingType: 'full_numbers',
-        pageLength: 15,  
+        pageLength: 15,
         paging:true,
         scrollCollapse: false,
         scrollY:"75vh"
-       
-       
+
+
       }
 }
 
 
 
 funcionclick(usuario){
-   
+
   this.CodeAccountHtml=usuario;  //recuperando la cuenta de usuario seleccionado
 if (this.CodeAccountHtml){
   //this.AccountEndpoint=null;
    this.test.getAccount(this.CodeAccountHtml).subscribe((datos)=>{
       this.AccountEndpoint=datos.data;
       // console.log(this.AccountEndpoint);
-      
-   
+
+
       })
       this.test.getTransactions(this.CodeAccountHtml).subscribe((datos)=>{
         this.TransactionEndpoint=datos.data;
         // console.log(this.TransactionEndpoint);
-      
 
-      
-      
+
+
+
       })
       this.test.getUser(this.CodeAccountHtml).subscribe((datos)=>{
         this.UserEndPoint=datos.data.results[0];
         // console.log(this.UserEndPoint);
 
 
-      
-      
+
+
       })
-      
+
 
   }
-  else 
+  else
   alert("El usuario no tiene cuenta registrada")
     }
- 
+
 getUsuarios(){
     this.Usuarios=[];
     this.Users.getUsers().subscribe((datos) =>{
@@ -105,7 +101,7 @@ getUsuarios(){
       //que exista un cambio
       this.dtTrigger.next();
     });
-   
+
   }
 //  getUsuarios(page=1,size=20){
    // this.Usuarios=[];
@@ -117,6 +113,5 @@ getUsuarios(){
    //   this.dtTrigger.next();
   //  });
    //test
-  
-  }
 
+  }
