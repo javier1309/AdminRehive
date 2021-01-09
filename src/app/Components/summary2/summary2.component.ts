@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ CurrencyOverviewService } from '../../Services/currencyOverview.service';
+import{ CurrencyoverviewService } from '../../Services/currencyOverview.service';
 import{ CurrencyService } from '../../Services/currency.service';
 import{ UsersService } from '../../Services/users.service';
 import{ TransactionsService } from '../../Services/transactions.service';
@@ -20,7 +20,7 @@ Transa:any=[];
 public isMenuCollapsed = true;
 
   constructor(
-    private currOver:CurrencyOverviewService,
+    private currOver:CurrencyoverviewService,
     private curr:CurrencyService,
     private Users:UsersService,
     private trans:TransactionsService
