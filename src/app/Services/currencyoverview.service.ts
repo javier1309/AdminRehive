@@ -19,7 +19,7 @@ const httpOptions = {  // contruyendo el http options
 @Injectable({
   providedIn: 'root'
 })
-export class CurrencyOverviewService {
+export class CurrencyoverviewService {
 
   constructor(private http: HttpClient) { }
 
