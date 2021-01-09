@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ CurrencyoverviewService } from '../../Services/currencyOverview.service';
+import{ CurrencyoverviewService } from '../../Services/currencyoverview.service';
 import{ CurrencyService } from '../../Services/currency.service';
 import{ UsersService } from '../../Services/users.service';
 import{ TransactionsService } from '../../Services/transactions.service';
